@@ -7,34 +7,48 @@ import React, {
   AppRegistry,
   Component,
   StyleSheet,
+  TabBarIOS,
   Text,
   View
 } from 'react-native';
 
-class CornellPulse extends Component {
-  render() {
+var Fitness = require('./Fitness.js');
+var Dining = require('./Dining.js');
+
+var CornellPulse = React.createClass({
+  getInitialState: function() {
+    return {selectedTab: 'Fitness'};
+  },
+
+  render: function() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <TabBarIOS selectedTab={this.state.selectedTab}>
+          <TabBarIOS.Item
+              selected={this.state.selectedTab === 'Fitness'}
+              icon={{uri:'featured'}}
+              onPress={() => {
+                  this.setState({selectedTab: 'Fitness'});
+              } }>
+              <Fitness />
+          </TabBarIOS.Item>
+          <TabBarIOS.Item
+              selected={this.state.selectedTab === 'Dining'}
+              icon={{uri:'search'}}
+              onPress={() => {
+                  this.setState({selectedTab: 'Dining'})
+              } }>
+              <Dining />
+          </TabBarIOS.Item>
+      </TabBarIOS>
     );
   }
-}
+})
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    /*alignItems: 'center',*/
     backgroundColor: '#F5FCFF',
   },
   welcome: {
