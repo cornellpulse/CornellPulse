@@ -24,6 +24,7 @@ var CornellPulse = React.createClass({
     return (
       <TabBarIOS selectedTab={this.state.selectedTab}>
           <TabBarIOS.Item
+              title="Fitness"
               selected={this.state.selectedTab === 'Fitness'}
               icon={{uri:'featured'}}
               onPress={() => {
@@ -32,6 +33,7 @@ var CornellPulse = React.createClass({
               <Fitness />
           </TabBarIOS.Item>
           <TabBarIOS.Item
+              title="Dining"
               selected={this.state.selectedTab === 'Dining'}
               icon={{uri:'search'}}
               onPress={() => {
