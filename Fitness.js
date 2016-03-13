@@ -6,7 +6,9 @@ var {
     StyleSheet,
     View,
     Text,
-    Component
+    Component,
+    ListView,
+    TouchableHighlight
    } = React;
  
 var styles = StyleSheet.create({
@@ -18,19 +20,21 @@ var styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    separator: {
+        height: 1,
+        backgroundColor: '#dddddd'
     }
 });
 
-var Fitness = React.createClass({
-    render: function() {
+class Fitness extends Component {
+     render() {
         return (
         <View style={styles.container}>
-            <Text style={styles.description}>
-              Fitness Tab
-            </Text>
+            <Text>Fitness Tab</Text>
         </View>
         );
     }
-});
+}
 
 module.exports = Fitness;

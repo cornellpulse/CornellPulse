@@ -21,8 +21,8 @@ var styles = StyleSheet.create({
     }
 });
 
-var Dining = React.createClass({
-    render: function() {
+class Dining extends Component {
+    render() {
         return (
         <View style={styles.container}>
             <Text style={styles.description}>
@@ -31,6 +31,6 @@ var Dining = React.createClass({
         </View>
         );
     }
-});
+}
 
 module.exports = Dining;

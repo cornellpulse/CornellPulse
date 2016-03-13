@@ -15,12 +15,13 @@ import React, {
 var Fitness = require('./Fitness.js');
 var Dining = require('./Dining.js');
 
-var CornellPulse = React.createClass({
-  getInitialState: function() {
-    return {selectedTab: 'Fitness'};
-  },
+class CornellPulse extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {selectedTab: 'Fitness'};
+  }
 
-  render: function() {
+  render() {
     return (
       <TabBarIOS selectedTab={this.state.selectedTab}>
           <TabBarIOS.Item
@@ -42,9 +43,9 @@ var CornellPulse = React.createClass({
               <Dining />
           </TabBarIOS.Item>
       </TabBarIOS>
-    );
+      )
   }
-})
+}
 
 const styles = StyleSheet.create({
   container: {
