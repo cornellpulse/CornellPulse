@@ -1,69 +1,67 @@
-/**?????????
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  TabBarIOS,
-  Text,
-  View
-} from 'react-native';
-
-var Fitness = require('./Fitness.js');
-var Dining = require('./Dining.js');
-
-class CornellPulse extends Component {
-  constructor(props) {
+ 'use strict';
+ 
+var React = require('react-native');
+// var Dining = require('./dining');
+// var Fitness = require('./fitness');
+ 
+var {
+    AppRegistry,
+    TabBarIOS,
+    View,
+    TabBarIOS,
+    Text,
+    StyleSheet
+  } = React;
+ 
+class CornellPulse extends React.Component {
+  constructor(props){
     super(props);
-    this.state = {selectedTab: 'Fitness'};
+    this.state = {selectedTab: 'tabOne'}
   }
-
+  setTab(tabId) {
+    this.setState({selectedTab: tabId})
+  }
   render() {
     return (
-      <TabBarIOS selectedTab={this.state.selectedTab}>
-          <TabBarIOS.Item
-              title="Fitness"
-              selected={this.state.selectedTab === 'Fitness'}
-              icon={{uri:'featured'}}
-              onPress={() => {
-                  this.setState({selectedTab: 'Fitness'});
-              } }>
-              <Fitness />
-          </TabBarIOS.Item>
-          <TabBarIOS.Item
-              title="Dining"
-              selected={this.state.selectedTab === 'Dining'}
-              icon={{uri:'search'}}
-              onPress={() => {
-                  this.setState({selectedTab: 'Dining'})
-              } }>
-              <Dining />
-          </TabBarIOS.Item>
+      <TabBarIOS>
+        <TabBarIOS.Item
+          systemIcon="history"
+          selected={this.state.selectedTab == 'tabOne'}
+          onPress={() => this.setTab('tabOne')}>
+          <View style={styles.tabContent}>
+            <Text style={styles.tabText}> Tab One </Text>
+          </View>
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          systemIcon="bookmarks"
+          selected={this.state.selectedTab == 'tabTwo'}
+          onPress={() => this.setTab('tabTwo')}>
+          <View style={styles.tabContent}>
+            <Text style={styles.tabText}> Tab Two </Text>
+          </View>
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          systemIcon="more"
+          selected={this.state.selectedTab == 'tabThree'}
+          onPress={() => this.setTab('tabThree')}>
+          <View style={styles.tabContent}>
+            <Text style={styles.tabText}> Tab Three </Text>
+          </View>
+        </TabBarIOS.Item>
       </TabBarIOS>
-      )
+    );
   }
-}
+ }
 
-const styles = StyleSheet.create({
-  container: {
+ var styles = StyleSheet.create({
+  tabContent: {
     flex: 1,
-    justifyContent: 'center',
-    /*alignItems: 'center',*/
-    backgroundColor: '#F5FCFF',
+    alignItems: 'center'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  tabText: {
+    margin:50,
+    fontSize: 45
+  }
+ });
 
 AppRegistry.registerComponent('CornellPulse', () => CornellPulse);
