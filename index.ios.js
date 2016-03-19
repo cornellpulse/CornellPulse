@@ -1,8 +1,10 @@
  'use strict';
  
 var React = require('react-native');
+
 var Dining = require('./Dining');
 var Fitness = require('./Fitness');
+
  
 var {
     AppRegistry,
