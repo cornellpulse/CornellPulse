@@ -4,6 +4,7 @@ var React = require('react-native');
 
 var Dining = require('./Dining');
 var Fitness = require('./Fitness');
+var More = require('./More');
 
  
 var {
@@ -33,18 +34,16 @@ class CornellPulse extends React.Component {
           <Fitness />
         </TabBarIOS.Item>
         <TabBarIOS.Item
+          systemIcon="more"
+          selected={this.state.selectedTab == 'tabThree'}
+          onPress={() => this.setTab('tabThree')}>
+          <More />
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
           systemIcon="bookmarks"
           selected={this.state.selectedTab == 'tabTwo'}
           onPress={() => this.setTab('tabTwo')}>
           <Dining />
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon="more"
-          selected={this.state.selectedTab == 'tabThree'}
-          onPress={() => this.setTab('tabThree')}>
-          <View style={styles.tabContent}>
-            <Text style={styles.tabText}> Tab Three </Text>
-          </View>
         </TabBarIOS.Item>
       </TabBarIOS>
     );
