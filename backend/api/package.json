@@ -1,0 +1,9 @@
+{
+    "name": "node-api",
+    "main": "rest.js",
+    "dependencies": {
+        "express": "*",
+        "mysql": "*",
+        "unirest": "*"
+    }
+}
