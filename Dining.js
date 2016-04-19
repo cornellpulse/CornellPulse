@@ -9,9 +9,12 @@ var {
     ListView,
     TouchableHighlight,
     Component,
+    SegmentedControlIOS,
    } = React;
 
 var UsageBar = require('./UsageBar.js');
+var Location = require('./Location.js');
+var Filter = require('./Filter.js');
  
 var styles = StyleSheet.create({
     description: {
@@ -19,9 +22,11 @@ var styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        position: 'absolute', 
+        top: 30,
+        left: 0,
+        right: 0,
+        bottom: 0
     },
     separator: {
         height: 1,
@@ -46,61 +51,75 @@ var styles = StyleSheet.create({
     },
     block: {
         flexDirection: 'row',
+        // borderWidth: 1,
+        // borderColor: "#dddddd"
     }
 });
 
+var Dining = React.createClass({
+    getInitialState() {
 
-class Dining extends Component {
-    constructor(props) {
-        super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
-        this.state = { dataSource: ds.cloneWithRows([]) }
-    }
+        return {dataSource: ds.cloneWithRows([]),
+                allData: [] };
+    },
 
     _fetchDinerData() {
         /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
-        var endpoint = 'http://cornellpulse.com:8080/api';
+        var endpoint = 'http://cornellpulse.com:3000/api';
 
         fetch(endpoint)
             .then((response) => response.json())
             .then((responseJSON) => {
-                console.log(responseJSON);
-                this.setState({dataSource: this.state.dataSource.cloneWithRows(responseJSON.diners)});
+                // console.log(responseJSON);
+                this.setState({allData: responseJSON.diners,
+                               dataSource: this.state.dataSource.cloneWithRows(responseJSON.diners) });
             })
             .catch((error) => { console.warn(error); });
-    }
+    },
+
+    changeList(list) { 
+        /* Sets the data source of the dining component.
+        Ultimately, this function get's past to <Filter /> */
+        this.setState({dataSource: this.state.dataSource.cloneWithRows(list) });
+    },
 
     componentDidMount() {
         this._fetchDinerData();
-    }
+    },
 
 
     _renderRow(rowData) {
         var count = rowData.count ? rowData.count : 0; // if no count available, then count is 0.
-        var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar 
+        var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
+        var ratio = (count/peak) > 1 ? 1 : (count/peak);  
         return (
             <TouchableHighlight
-                underlayColor='#DDDDDD'>
+                underlayColor='#DDDDDD'
+                onPress={() => this.props.onForward(Location, rowData.location)}>
                 <View>
                     <View style={styles.block}>
                         <View style={styles.listitem}>
                             <Text>{rowData.location}</Text>
                         </View>
-                        <UsageBar percentage={(count/peak) * 100}/>
+                        <UsageBar percentage={ratio * 100}/>
                     </View>
-                    <View style={styles.separator}/>
+                    <View style={styles.separator} />
                 </View>
             </TouchableHighlight>
         );
-    }
+    },
 
     render() {
         return (
+            <View style={styles.container}>
+                <Filter allData={this.state.allData} changeList={this.changeList}/>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow} />
+            </View>
         );
     }
-}
+})
 
 module.exports = Dining;

@@ -12,6 +12,7 @@ var {
    } = React;
 
 var UsageBar = require('./UsageBar');
+var Location = require('./Location');
 
 // var RNChart = require('react-native-chart').default;
  
@@ -24,10 +25,6 @@ var styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    separator: {
-        height: 1,
-        backgroundColor: '#dddddd'
     },
     separator: {
         height: 1,
@@ -52,6 +49,68 @@ var styles = StyleSheet.create({
 
 });
 
+
+var Fitness = React.createClass({
+    getInitialState() {
+        var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
+        return { dataSource: ds.cloneWithRows([]) };
+    },
+
+    _fetchGymData() {
+        /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
+        var endpoint = 'http://cornellpulse.com:3000/api';
+
+        fetch(endpoint)
+            .then((response) => response.json())
+            .then((responseJSON) => {
+                // console.log(responseJSON);
+                this.setState({dataSource: this.state.dataSource.cloneWithRows(responseJSON.gyms)});
+            })
+            .catch((error) => { console.warn(error); });
+    },
+
+    componentDidMount() {
+        this._fetchGymData();
+    },
+
+    _renderRow(rowData) {
+        var count = rowData.count ? rowData.count : 0; // if no count available, then count is 0.
+        var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
+        var ratio = (count/peak) > 1 ? 1 : (count/peak);  
+        return (
+            <TouchableHighlight
+                underlayColor='#DDDDDD'
+                onPress={() => this.props.onForward(Location, rowData.location)}>
+                    <View>
+                        <View style={styles.block}>
+                            <View style={styles.listitem}>
+                                <Text>{rowData.location}</Text>
+                            </View>
+                            <UsageBar percentage={ratio * 100}/>
+                        </View>
+                        <View style={styles.separator}/>
+                    </View>
+            </TouchableHighlight>
+        );
+    },
+
+    render() {
+        return (
+            <ListView
+                dataSource={this.state.dataSource}
+                renderRow={(rowData) => this._renderRow(rowData)} />
+        );
+    }
+
+})
+            
+/*<RNChart 
+    style={styles.chart}
+    chartData={chartData}
+    verticalGridStep={5}
+    xLabels={xlabels} /> 
+
+
 // var chartData = [{
 //             name: 'LineChart',
 //             color: 'gray',
@@ -65,71 +124,8 @@ var styles = StyleSheet.create({
 // var xlabels = ['0','1','2','3','4','5','6','7','8','9','10','11'];
 
 
-class Fitness extends Component {
-    constructor(props) {
-        super(props);
-        var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
-        this.state = { dataSource: ds.cloneWithRows([]) }
-    }
+*/
 
-    _fetchGymData() {
-        /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
-        var endpoint = 'http://cornellpulse.com:8080/api';
-
-        fetch(endpoint)
-            .then((response) => response.json())
-            .then((responseJSON) => {
-                console.log(responseJSON);
-                this.setState({dataSource: this.state.dataSource.cloneWithRows(responseJSON.gyms)});
-            })
-            .catch((error) => { console.warn(error); });
-    }
-
-    componentDidMount() {
-        this._fetchGymData();
-    }
-
-    _renderRow(rowData) {
-        var count = rowData.count ? rowData.count : 0; // if no count available, then count is 0.
-        var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar 
-        return (
-            <TouchableHighlight
-                underlayColor='#DDDDDD'>
-                <View>
-                    <View style={styles.block}>
-                        <View style={styles.listitem}>
-                            <Text>{rowData.location}</Text>
-                        </View>
-                        <UsageBar percentage={(count/peak) * 100}/>
-                    </View>
-                    <View style={styles.separator}/>
-                </View>
-            </TouchableHighlight>
-        );
-    }
-
-    render() {
-        return (
-            <ListView
-                dataSource={this.state.dataSource}
-                renderRow={(rowData) => this._renderRow(rowData)} />
-        );
-    }
-
-    
-}
-
-// This is the rendering of Fitness:
-/*<ListView
-                dataSource={this.state.dataSource}
-                renderRow={(rowData) => this._renderRow(rowData)}
-            />*/
-
-/*<RNChart 
-    style={styles.chart}
-    chartData={chartData}
-    verticalGridStep={5}
-    xLabels={xlabels} /> */
 
 
 module.exports = Fitness;

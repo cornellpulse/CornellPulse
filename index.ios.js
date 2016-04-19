@@ -2,50 +2,52 @@
  
 var React = require('react-native');
 
-var Dining = require('./Dining');
-var Fitness = require('./Fitness');
-var More = require('./More');
+var Tabs = require('./Tabs.js');
+var Dining = require('./Dining.js');
+
 
  
 var {
     AppRegistry,
-    TabBarIOS,
+    Navigator,
+    NavigatorIOS,
     View,
-    TabBarIOS,
     Text,
     StyleSheet
   } = React;
  
 class CornellPulse extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {selectedTab: 'tabOne'}
+
+  _renderScene(route, navigator) {
+    var Component = route.component;
+    return(
+      <Component 
+        route={route}
+        navigator={navigator}
+        onForward={(component, name) => {
+          console.log(navigator.getCurrentRoutes());
+          var nextIndex = route.index + 1;
+          navigator.push({
+            name: name,
+            index: nextIndex,
+            component: component
+          });
+        }}
+        onBack={() => {
+          if (route.index > 0) {
+            navigator.pop();
+          }
+        }}
+      />
+    );
   }
-  setTab(tabId) {
-    this.setState({selectedTab: tabId})
-  }
+
   render() {
     return (
-      <TabBarIOS>
-        <TabBarIOS.Item
-          systemIcon="history"
-          selected={this.state.selectedTab == 'tabOne'}
-          onPress={() => this.setTab('tabOne')}>
-          <Fitness />
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon="more"
-          selected={this.state.selectedTab == 'tabThree'}
-          onPress={() => this.setTab('tabThree')}>
-          <More />
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon="bookmarks"
-          selected={this.state.selectedTab == 'tabTwo'}
-          onPress={() => this.setTab('tabTwo')}>
-          <Dining />
-        </TabBarIOS.Item>
-      </TabBarIOS>
+      <Navigator
+        initialRoute={{name: 'Home', index: 0, component: Tabs}}
+        renderScene={this._renderScene}
+      />
     );
   }
  }
