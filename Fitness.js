@@ -74,7 +74,7 @@ class Fitness extends Component {
 
     _fetchGymData() {
         /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
-        var endpoint = 'http://cornellpulse.com:8080/api';
+        var endpoint = 'www.cornellpulse.com:3000/api';
 
         fetch(endpoint)
             .then((response) => response.json())
