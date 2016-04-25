@@ -8,7 +8,7 @@ var {
     Text,
     Component,
     ListView,
-    TouchableHighlight
+    TouchableHighlight,
    } = React;
 
 var UsageBar = require('./UsageBar');
@@ -81,18 +81,29 @@ var Fitness = React.createClass({
             <TouchableHighlight
                 underlayColor='#DDDDDD'
                 onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View>
-                        <View style={styles.block}>
-                            <View style={styles.listitem}>
-                                <Text>{rowData.location}</Text>
+                    <View style={[styles.container, this.border('black')]}>
+                        <View style={[styles.block, this.border('pink')]}>
+                            <View style={[styles.listitem, this.border('yellow')]}>
+                            <View style={[styles.location, this.border('blue')]}>
+                                <Text style={styles.locationText}>{rowData.location}</Text>
                             </View>
-                            <UsageBar percentage={ratio * 100}/>
+                            <View style={[styles.percentage, this.border('blue')]}>
+                                 <UsageBar percentage={ratio * 100}/>
+                            </View>
+                            </View>
                         </View>
-                        <View style={styles.separator}/>
+                        <View style={[styles.separator, this.border('green')]}/>
                     </View>
             </TouchableHighlight>
         );
     },
+
+    border: function(color){
+        return {
+          borderColor: color,
+          borderWidth: 4
+        }
+      },
 
     render() {
         return (
@@ -103,7 +114,42 @@ var Fitness = React.createClass({
     }
 
 })
-            
+           
+var styles = StyleSheet.create({
+    container: {
+        height: 80,
+        alignSelf: 'auto',
+        
+    },
+    block: {
+    },
+    listitem: {
+        flexDirection: 'row',
+    },
+    location: {
+        flex: 3
+    },
+    locationText: {
+        fontWeight: 'bold', 
+        fontSize: 20
+    },
+    percentage: {
+        flex: 2,
+        justifyContent: 'flex-end'
+    },
+    separator: {    
+        
+    }
+
+    // height: 36,
+    // backgroundColor: '#48BBEC',
+    // borderColor: '#48BBEC',
+    // borderWidth: 1,
+    // borderRadius: 8,
+    // marginBottom: 10,
+    // alignSelf: 'stretch',
+    // justifyContent: 'center'
+});
 /*<RNChart 
     style={styles.chart}
     chartData={chartData}
