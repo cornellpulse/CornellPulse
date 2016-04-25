@@ -23,13 +23,25 @@ var options = {
   }
 }
 var More = React.createClass({
+  clearForm() {
+      // clear content from all textbox
+      this.setState({ value: null });
+    },
 
   onPress: function () {
     // call getValue() to get the values of the form
     var value = this.refs.form.getValue();
     if (value) { // if validation fails, value will be null
       console.log(value); // value here is an instance of Person
+      this.clearForm();
+      // window.open('mailto:fsw29@cornell.edu?subject=send&body=body');
+
     }
+  },
+
+   componentDidMount() {
+    // give focus to the name textbox
+    console.log(this.refs.form.getComponent('mail').refs.input.focus());
   },
 
   render: function() {
