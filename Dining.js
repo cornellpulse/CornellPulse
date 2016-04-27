@@ -6,6 +6,7 @@ var {
     StyleSheet,
     View,
     Text,
+    Image,
     ListView,
     TouchableHighlight,
     Component,
@@ -92,7 +93,8 @@ var Dining = React.createClass({
     _renderRow(rowData) {
         var count = rowData.count ? rowData.count : 0; // if no count available, then count is 0.
         var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
-        var ratio = (count/peak) > 1 ? 1 : (count/peak);  
+        var ratio = (count/peak) > 1 ? 1 : (count/peak); 
+        // Testing image stuff
         return (
             <TouchableHighlight
                 underlayColor='#DDDDDD'
@@ -104,6 +106,11 @@ var Dining = React.createClass({
                         </View>
                         <UsageBar percentage={ratio * 100}/>
                     </View>
+                    <Image
+                        style={{height: 40, width: 40}}
+                        resizeMode='contain'
+                        source={{uri: rowData.image}}
+                    />
                     <View style={styles.separator} />
                 </View>
             </TouchableHighlight>
