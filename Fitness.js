@@ -16,38 +16,38 @@ var Location = require('./Location');
 
 // var RNChart = require('react-native-chart').default;
  
-var styles = StyleSheet.create({
-    description: {
-        fontSize: 20,
-        backgroundColor: 'white'
-    },
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    separator: {
-        height: 1,
-        backgroundColor: '#dddddd'
-    },
-    listitem: {
-        height: 80,
-    },
-    gymName: {
-        paddingTop: 40, // half of the listitem height (centers the text vertically)
-    },
-    chart: {
-        height: 80,
-        flex: 2,
-        borderWidth: 2,
-        borderColor: "#00ff00",
+// var styles = StyleSheet.create({
+//     description: {
+//         fontSize: 20,
+//         backgroundColor: 'white'
+//     },
+//     container: {
+//         flex: 1,
+//         justifyContent: 'center',
+//         alignItems: 'center'
+//     },
+//     separator: {
+//         height: 1,
+//         backgroundColor: '#dddddd'
+//     },
+//     listitem: {
+//         height: 80,
+//     },
+//     gymName: {
+//         paddingTop: 40, // half of the listitem height (centers the text vertically)
+//     },
+//     chart: {
+//         height: 80,
+//         flex: 2,
+//         borderWidth: 2,
+//         borderColor: "#00ff00",
 
-    },
-    block: {
-        flexDirection: 'row',
-    }
+//     },
+//     // block: {
+//     //     flexDirection: 'row',
+//     // }
 
-});
+// });
 
 
 var Fitness = React.createClass({
@@ -81,18 +81,18 @@ var Fitness = React.createClass({
             <TouchableHighlight
                 underlayColor='#DDDDDD'
                 onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={[styles.container, this.border('black')]}>
-                        <View style={[styles.block, this.border('pink')]}>
-                            <View style={[styles.listitem, this.border('yellow')]}>
-                            <View style={[styles.location, this.border('blue')]}>
+                    <View style={[styles.container, this.border('white')]}>
+                        <View style={[styles.block, this.border('white')]}>
+                            <View style={[styles.listitem, this.border('white')]}>
+                            <View style={[styles.location, this.border('white')]}>
                                 <Text style={styles.locationText}>{rowData.location}</Text>
                             </View>
-                            <View style={[styles.percentage, this.border('blue')]}>
+                            <View style={[styles.percentage, this.border('white')]}>
                                  <UsageBar percentage={ratio * 100}/>
                             </View>
                             </View>
                         </View>
-                        <View style={[styles.separator, this.border('green')]}/>
+                        <View style={[styles.separator, this.border('white')]}/>
                     </View>
             </TouchableHighlight>
         );
