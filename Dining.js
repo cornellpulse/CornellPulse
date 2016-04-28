@@ -17,45 +17,7 @@ var UsageBar = require('./UsageBar.js');
 var Location = require('./Location.js');
 var Filter = require('./Filter.js');
  
-var styles = StyleSheet.create({
-    description: {
-        fontSize: 20,
-        backgroundColor: 'white'
-    },
-    container: {
-        position: 'absolute', 
-        top: 30,
-        left: 0,
-        right: 0,
-        bottom: 0
-    },
-    separator: {
-        height: 1,
-        backgroundColor: '#dddddd'
-    },
-    separator: {
-        height: 1,
-        backgroundColor: '#dddddd'
-    },
-    listitem: {
-        height: 80,
-    },
-    gymName: {
-        paddingTop: 40, // half of the listitem height (centers the text vertically)
-    },
-    chart: {
-        height: 80,
-        flex: 2,
-        borderWidth: 2,
-        borderColor: "#00ff00",
 
-    },
-    block: {
-        flexDirection: 'row',
-        // borderWidth: 1,
-        // borderColor: "#dddddd"
-    }
-});
 
 var Dining = React.createClass({
     getInitialState() {
@@ -96,29 +58,40 @@ var Dining = React.createClass({
         var ratio = (count/peak) > 1 ? 1 : (count/peak); 
         // Testing image stuff
         return (
-            <View>
-                <TouchableHighlight
-                    underlayColor='#DDDDDD'
-                    onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{flexDirection: "row", flex: 2, borderWidth: 2, borderColor: "black", height: 80}}>
-                        <View style={{height: 80, borderWidth: 2, borderColor: "red", flexDirection: "row"}}>
-                            <Image
-                                style={{height: 40, width: 40}}
-                                resizeMode='contain'
-                                source={{uri: rowData.image}}
-                            />
+
+                    
+
+         <TouchableHighlight
+                underlayColor='#DDDDDD'
+                onPress={() => this.props.onForward(Location, rowData.location)}>
+            <View style={[styles.container, this.border('white')]}>
+                <View style={[styles.block, this.border('white')]}>
+                    <View style={[styles.listitem, this.border('white')]}>
+                        <View style={[styles.image, this.border('white')]}>
+                            <Text> IMAGE </Text>
+                        </View>
+                        <View style={[styles.location, this.border('white')]}>
                             <Text>{rowData.location}</Text>
                         </View>
-
-                        <View style={{borderColor: "pink", borderWidth: 2}}>
-                            <UsageBar percentage={ratio * 100}/>
+                        <View style={[styles.percentage]}>
+                             <UsageBar percentage={ratio * 100}/>
                         </View>
                     </View>
-                </TouchableHighlight>
-                <View style={styles.separator} />
+                </View>
+                <View style={[styles.separator]}/>
             </View>
+            </TouchableHighlight>
+
         );
     },
+
+    border: function(color){
+        return {
+          borderColor: color,
+          borderWidth: 4
+        }
+      },
+
 
     render() {
         return (
@@ -132,21 +105,109 @@ var Dining = React.createClass({
     }
 })
 
+var styles = StyleSheet.create({
+    container: {
+        paddingTop: 30,
+        alignSelf: 'auto',
+        justifyContent: 'center',
+    },
+    // block: {
+    // },
+    listitem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 80
+    },
+    location: {
+        flex: 3
+    },
+    locationText: {
+        fontWeight: 'bold', 
+        fontSize: 20,
+    },
+    image: {
+    },
+    percentage: {
+        flex: 2,
+        justifyContent: 'flex-end',
+        marginRight: 10
+    },
+    // separator: {    
+        
+    // }
+
+    // height: 36,
+    // backgroundColor: '#48BBEC',
+    // borderColor: '#48BBEC',
+    // borderWidth: 1,
+    // borderRadius: 8,
+    // marginBottom: 10,
+    // alignSelf: 'stretch',
+    // justifyContent: 'center'
+});
+
+// var styles = StyleSheet.create({
+//     container: {
+//         height: 80,
+//         alignSelf: 'auto',
+        
+//     },
+//     block: {
+//     },
+//     listitem: {
+//         flexDirection: 'row',
+//     },
+//     location: {
+//         flex: 3
+//     },
+//     locationText: {
+//         fontWeight: 'bold', 
+//         fontSize: 20
+//     },
+//     percentage: {
+//         flex: 2,
+//         justifyContent: 'flex-end'
+//     },
+//     description: {
+//         fontSize: 20,
+//         backgroundColor: 'white'
+//     },
+//     container: {
+//         position: 'absolute', 
+//         flexDirection: 'column',
+//         top: 30,
+//         left: 0,
+//         right: 0,
+//         bottom: 0
+//     },
+//     separator: {
+//         height: 1,
+//         backgroundColor: '#dddddd'
+//     },
+//     listitem: {
+//         height: 80,
+//     },
+//     gymName: {
+//         paddingTop: 40, // half of the listitem height (centers the text vertically)
+//     },
+//     chart: {
+//         height: 80,
+//         flex: 2,
+//         // borderWidth: 2,
+//         // borderColor: "#00ff00",
+
+//     },
+//     block: {
+//         flexDirection: 'row',
+//         // borderWidth: 1,
+//         // borderColor: "#dddddd"
+//     }
+// });
+
+// Image style={styles.logo}>
+//                             style={{height: 40, width: 40}}
+//                             resizeMode='contain'
+//                             source={{uri: rowData.image}} </Image
+
 module.exports = Dining;
-
-
-
-/*
-<View style={styles.block}>
-                            <View style={styles.listitem}>
-                                <Text>{rowData.location}</Text>
-                            </View>
-                            <UsageBar percentage={ratio * 100}/>
-                        </View>
-                        <Image
-                            style={{height: 40, width: 40}}
-                            resizeMode='contain'
-                            source={{uri: rowData.image}}
-                        /> 
-
- */
