@@ -41,7 +41,6 @@ var styles = StyleSheet.create({
         flex: 2,
         borderWidth: 2,
         borderColor: "#00ff00",
-
     },
     block: {
         flexDirection: 'row',
@@ -84,12 +83,12 @@ var Fitness = React.createClass({
                     <View style={[styles.container, this.border('black')]}>
                         <View style={[styles.block, this.border('pink')]}>
                             <View style={[styles.listitem, this.border('yellow')]}>
-                            <View style={[styles.location, this.border('blue')]}>
-                                <Text style={styles.locationText}>{rowData.location}</Text>
-                            </View>
-                            <View style={[styles.percentage, this.border('blue')]}>
-                                 <UsageBar percentage={ratio * 100}/>
-                            </View>
+                                <View style={[styles.location, this.border('blue')]}>
+                                    <Text style={styles.locationText}>{rowData.location}</Text>
+                                </View>
+                                <View style={[styles.percentage, this.border('blue')]}>
+                                     <UsageBar percentage={ratio * 100}/>
+                                </View>
                             </View>
                         </View>
                         <View style={[styles.separator, this.border('green')]}/>

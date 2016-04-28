@@ -96,24 +96,27 @@ var Dining = React.createClass({
         var ratio = (count/peak) > 1 ? 1 : (count/peak); 
         // Testing image stuff
         return (
-            <TouchableHighlight
-                underlayColor='#DDDDDD'
-                onPress={() => this.props.onForward(Location, rowData.location)}>
-                <View>
-                    <View style={styles.block}>
-                        <View style={styles.listitem}>
+            <View>
+                <TouchableHighlight
+                    underlayColor='#DDDDDD'
+                    onPress={() => this.props.onForward(Location, rowData.location)}>
+                    <View style={{flexDirection: "row", flex: 2, borderWidth: 2, borderColor: "black", height: 80}}>
+                        <View style={{height: 80, borderWidth: 2, borderColor: "red", flexDirection: "row"}}>
+                            <Image
+                                style={{height: 40, width: 40}}
+                                resizeMode='contain'
+                                source={{uri: rowData.image}}
+                            />
                             <Text>{rowData.location}</Text>
                         </View>
-                        <UsageBar percentage={ratio * 100}/>
+
+                        <View style={{borderColor: "pink", borderWidth: 2}}>
+                            <UsageBar percentage={ratio * 100}/>
+                        </View>
                     </View>
-                    <Image
-                        style={{height: 40, width: 40}}
-                        resizeMode='contain'
-                        source={{uri: rowData.image}}
-                    />
-                    <View style={styles.separator} />
-                </View>
-            </TouchableHighlight>
+                </TouchableHighlight>
+                <View style={styles.separator} />
+            </View>
         );
     },
 
@@ -130,3 +133,20 @@ var Dining = React.createClass({
 })
 
 module.exports = Dining;
+
+
+
+/*
+<View style={styles.block}>
+                            <View style={styles.listitem}>
+                                <Text>{rowData.location}</Text>
+                            </View>
+                            <UsageBar percentage={ratio * 100}/>
+                        </View>
+                        <Image
+                            style={{height: 40, width: 40}}
+                            resizeMode='contain'
+                            source={{uri: rowData.image}}
+                        /> 
+
+ */
