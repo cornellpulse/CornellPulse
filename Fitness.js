@@ -9,13 +9,13 @@ var {
     Component,
     ListView,
     TouchableHighlight,
+    LayoutPropTypes
    } = React;
 
 var UsageBar = require('./UsageBar');
 var Location = require('./Location');
 
 // var RNChart = require('react-native-chart').default;
- 
 // var styles = StyleSheet.create({
 //     description: {
 //         fontSize: 20,
@@ -72,53 +72,61 @@ var Fitness = React.createClass({
         this._fetchGymData();
     },
 
+    render() {
+        return (
+            <ListView
+                style={styles.wrapper}
+                dataSource={this.state.dataSource}
+                renderRow={(rowData) => this._renderRow(rowData)} />
+        );
+    },
+
     _renderRow(rowData) {
         var count = rowData.count ? rowData.count : 0; // if no count available, then count is 0.
         var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
         var ratio = (count/peak) > 1 ? 1 : (count/peak);  
         return (
             <TouchableHighlight
-                underlayColor='#DDDDDD'
+                underlayColor='gray'
                 onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={[styles.container, this.border('white')]}>
-                        <View style={[styles.block, this.border('white')]}>
-                            <View style={[styles.listitem, this.border('white')]}>
-                            <View style={[styles.location, this.border('white')]}>
+                    <View style={styles.container}>
+                        <View style={styles.block}>
+                            <View style={styles.listitem}>
+                            <View style={styles.location}>
                                 <Text style={styles.locationText}>{rowData.location}</Text>
                             </View>
-                            <View style={[styles.percentage, this.border('white')]}>
-                                 <UsageBar percentage={ratio * 100}/>
+                            <View style={styles.percentage}>
+                                 <UsageBar style={styles.bar} percentage={ratio * 100}/>
                             </View>
                             </View>
-                        </View>
-                        <View style={[styles.separator, this.border('white')]}/>
+                        </View>                
                     </View>
             </TouchableHighlight>
         );
     },
 
-    border: function(color){
-        return {
-          borderColor: color,
-          borderWidth: 4
-        }
-      },
+    // border: function(color){
+    //     return {
+    //       borderColor: color,
+    //       borderWidth: 4
+    //     }
+    //   },
 
-    render() {
-        return (
-            <ListView
-                dataSource={this.state.dataSource}
-                renderRow={(rowData) => this._renderRow(rowData)} />
-        );
-    }
+
 
 })
            
 var styles = StyleSheet.create({
+    wrapper: {
+        backgroundColor: '#33648C',
+        paddingTop: 30
+    },
     container: {
+        // backgroundColor: '#33648C',       
+        padding: 30,
         height: 80,
         alignSelf: 'auto',
-        
+        justifyContent: 'center'
     },
     block: {
     },
@@ -129,16 +137,22 @@ var styles = StyleSheet.create({
         flex: 3
     },
     locationText: {
-        fontWeight: 'bold', 
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: 'Caviar Dreams',
+        color: 'white'
     },
     percentage: {
         flex: 2,
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     },
     separator: {    
-        
+        // color: "white",
+        borderWidth: 1,
+        borderColor: "white",
+        // opacity: 0.8
     }
+});
+  
 
     // height: 36,
     // backgroundColor: '#48BBEC',
@@ -148,7 +162,7 @@ var styles = StyleSheet.create({
     // marginBottom: 10,
     // alignSelf: 'stretch',
     // justifyContent: 'center'
-});
+
 /*<RNChart 
     style={styles.chart}
     chartData={chartData}
