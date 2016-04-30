@@ -126,7 +126,9 @@ var styles = StyleSheet.create({
         padding: 30,
         height: 80,
         alignSelf: 'auto',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: "white"
     },
     block: {
     },

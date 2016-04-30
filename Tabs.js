@@ -23,13 +23,13 @@ var Tabs = React.createClass({
   render() {
     return (
       <TabBarIOS>
-        <Icon.TabBarItemIOS
+        <Icon.TabBarItemIOS 
           iconName="fitness-center"
           selected={this.state.selectedTab == "Fitness"}
           onPress={() => this.setState({selectedTab: "Fitness"})}
           title="Fitness">
 
-          <Fitness
+          <Fitness 
             {...this.props} // shorthand for sending all props down to Fitness
           />
 

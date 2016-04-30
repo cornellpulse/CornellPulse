@@ -12,7 +12,7 @@ class CornellPulse extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{fontFamily: 'Caviar Dreams'}}>
+        <Text>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
+    backgroundColor: '#F5FCFF',
+},
   welcome: {
     fontSize: 20,
     textAlign: 'center',
