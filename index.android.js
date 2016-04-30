@@ -12,7 +12,7 @@ class CornellPulse extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        <Text style={{fontFamily: 'Caviar Dreams'}}>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
@@ -27,11 +27,16 @@ class CornellPulse extends Component {
 }
 
 const styles = StyleSheet.create({
+  @font-face { 
+    fontFamily: Gotham; src: url('./src/cavier_dreams'); 
+  },
+
   container: {
+    fontFamily: Gotham;
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,

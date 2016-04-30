@@ -18,11 +18,11 @@ var styles = StyleSheet.create({
   },
 
   bar: {
-    borderColor: 'black',
-    borderWidth: 2,
+    // borderColor: 'black',
+    // borderWidth: 2,
     width: 100,
     height: 20,
-
+    backgroundColor: '#15337E'
   }
 })
 
@@ -35,15 +35,15 @@ var UsageBar = React.createClass({
 
   getBarStyle() {
     var barStyle = {
-      height: 16, // CAREFUL: this is hardcoded, so adjusting could mess up the view
+      height: 20, // CAREFUL: this is hardcoded, so adjusting could mess up the view
     }
 
-    if (this.props.percentage >= 70) {
-      barStyle['backgroundColor'] = 'red';
+    if(this.props.percentage >= 70) {
+      barStyle['backgroundColor'] = '#CA6F7D';
     } else if(this.props.percentage >= 40) {
-      barStyle['backgroundColor'] = 'yellow';
+      barStyle['backgroundColor'] = '#D9BC85';
     } else {
-      barStyle['backgroundColor'] = 'green';
+      barStyle['backgroundColor'] = '#A9D78B';
     }
     barStyle['width'] = (100 * this.props.percentage) / 100; //  Formula for sizing color bar: <width of UBar> * <percenatage> / 100
     return barStyle;
@@ -56,7 +56,6 @@ var UsageBar = React.createClass({
           <View style={this.getBarStyle()}>
           </View>
         </View>
-        <Text>{Math.round(this.props.percentage)}%</Text>
       </View>
     );
   }
