@@ -38,7 +38,7 @@ var UsageBar = React.createClass({
       height: 16, // CAREFUL: this is hardcoded, so adjusting could mess up the view
     }
 
-    if(this.props.percentage >= 70) {
+    if (this.props.percentage >= 70) {
       barStyle['backgroundColor'] = 'red';
     } else if(this.props.percentage >= 40) {
       barStyle['backgroundColor'] = 'yellow';

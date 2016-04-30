@@ -3,12 +3,13 @@
 var React = require('react-native');
 
 var {
-    StyleSheet,
-    View,
-    Text,
-    Component,
-    SegmentedControlIOS
-    } = React;
+  StyleSheet,
+  View,
+  Text,
+  Component,
+  TouchableHighlight,
+  SegmentedControlIOS
+  } = React;
 
 var cardinalLocations = {
   'North': ["Bear Necessities Grill & C-Store", "Carol's Cafe", "North Star Dining Room", "Risley Dining Room", "Robert Purcell Marketplace Eatery", "Sweet Sensations"],
@@ -18,8 +19,8 @@ var cardinalLocations = {
 var Filter = React.createClass({
   getInitialState() {
     return {
-      values: ['North', 'West', 'Central', 'All'],
-      selectedIndex: 3,
+      values: ['North', 'West', 'Central'],
+      selectedIndex: 2,
     }
   },
 
@@ -35,30 +36,38 @@ var Filter = React.createClass({
   },
 
   filter(delimiter) {
-    if (delimiter != 'All') {
-      var cardinal = cardinalLocations[delimiter];
+    var cardinal = cardinalLocations[delimiter];
+    
+    var filteredList = this.props.allData.filter((el) => 
+                              cardinal.indexOf(el.location) != -1); 
 
-      console.log(this.props.allData);
-      
-      var filteredList = this.props.allData.filter((el) => 
-                                cardinal.indexOf(el.location) != -1); 
-      return filteredList;
-    } else {
-      return this.props.allData;
-    }
+    return filteredList;
   },
 
 
 
   render() {
     return (
-        <SegmentedControlIOS
-          values={this.state.values}
-          selectedIndex={this.state.selectedIndex}
-          onChange={this._onChange}>
-        </SegmentedControlIOS>
+        <View style={styles.outerFilter}>
+          <View>
+          </View>
+          <View>
+          </View>
+          <View>
+          </View>
+        </View>
       )
   }
-})
+});
+
+var styles = StyleSheet.create({
+  outerFilter: { // goes on the box that surrounds West, North, and Central
+
+  },
+
+  innerFilter: { // goes on the 'West', 'North', 'Central' Views
+
+  }
+}) 
 
 module.exports = Filter;

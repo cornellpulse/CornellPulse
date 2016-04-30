@@ -16,6 +16,7 @@ var {
 var UsageBar = require('./UsageBar.js');
 var Location = require('./Location.js');
 var Filter = require('./Filter.js');
+var PageHeaderText = require('./PageHeaderText');
  
 
 
@@ -62,13 +63,16 @@ var Dining = React.createClass({
                     
 
          <TouchableHighlight
-                underlayColor='#DDDDDD'
-                onPress={() => this.props.onForward(Location, rowData.location)}>
+            underlayColor='#DDDDDD'
+            onPress={() => this.props.onForward(Location, rowData.location)}>
             <View style={[styles.container, this.border('white')]}>
                 <View style={[styles.block, this.border('white')]}>
                     <View style={[styles.listitem, this.border('white')]}>
                         <View style={[styles.image, this.border('white')]}>
-                            <Text> IMAGE </Text>
+                            <Image
+                                style={{height: 40, width: 40, borderColor: 'black', borderWidth: 2}} 
+                                source={{uri: rowData.image}}
+                                resizeMode='contain' />
                         </View>
                         <View style={[styles.location, this.border('white')]}>
                             <Text>{rowData.location}</Text>
@@ -80,7 +84,7 @@ var Dining = React.createClass({
                 </View>
                 <View style={[styles.separator]}/>
             </View>
-            </TouchableHighlight>
+        </TouchableHighlight>
 
         );
     },
@@ -90,12 +94,14 @@ var Dining = React.createClass({
           borderColor: color,
           borderWidth: 4
         }
-      },
+    },
 
 
     render() {
         return (
-            <View style={styles.container}>
+
+            <View style={[styles.container, {paddingTop: 30}]}>
+                <PageHeaderText title="Dining" />
                 <Filter allData={this.state.allData} changeList={this.changeList}/>
                 <ListView
                     dataSource={this.state.dataSource}
@@ -107,12 +113,11 @@ var Dining = React.createClass({
 
 var styles = StyleSheet.create({
     container: {
-        paddingTop: 30,
+        // paddingTop: 30, // Makes the filter sit below the carrier info on ios.
+        flex: 1, // makes the ListView Scrollable (Do not touch) http://stackoverflow.com/questions/32874559/listview-fails-to-scroll
         alignSelf: 'auto',
         justifyContent: 'center',
     },
-    // block: {
-    // },
     listitem: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -133,9 +138,10 @@ var styles = StyleSheet.create({
         justifyContent: 'flex-end',
         marginRight: 10
     },
-    // separator: {    
-        
-    // }
+    separator: {    
+        borderColor: 'gray',
+        borderWidth: 1
+    }
 
     // height: 36,
     // backgroundColor: '#48BBEC',

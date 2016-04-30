@@ -13,6 +13,7 @@ var {
 
 var UsageBar = require('./UsageBar');
 var Location = require('./Location');
+var PageHeaderText = require('./PageHeaderText');
 
 // var RNChart = require('react-native-chart').default;
  
@@ -118,7 +119,6 @@ var styles = StyleSheet.create({
     container: {
         height: 80,
         alignSelf: 'auto',
-        
     },
     block: {
     },
