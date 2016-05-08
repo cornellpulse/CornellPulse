@@ -87,7 +87,7 @@ var Fitness = React.createClass({
         var ratio = (count/peak) > 1 ? 1 : (count/peak);  
         return (
             <TouchableHighlight
-                underlayColor='gray'
+                underlayColor='#99BECB'
                 onPress={() => this.props.onForward(Location, rowData.location)}>
                     <View style={styles.container}>
                         <View style={styles.block}>
@@ -128,7 +128,9 @@ var styles = StyleSheet.create({
         alignSelf: 'auto',
         justifyContent: 'center',
         borderBottomWidth: 1,
-        borderBottomColor: "white"
+        borderBottomColor: "#99BECB",
+        borderBottomRightRadius: 50,
+        borderBottomLeftRadius: 50,
     },
     block: {
     },

@@ -27,12 +27,7 @@ class CornellPulse extends Component {
 }
 
 const styles = StyleSheet.create({
-  @font-face { 
-    fontFamily: Gotham; src: url('./src/cavier_dreams'); 
-  },
-
   container: {
-    fontFamily: Gotham;
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

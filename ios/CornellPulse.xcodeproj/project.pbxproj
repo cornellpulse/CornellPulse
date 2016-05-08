@@ -27,10 +27,10 @@
 		725ACAF81A69447695F7D24E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD90A5FB369483CB6AA0FD6 /* EvilIcons.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		916DF1C6C3B445E2941F306A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E14AA85F357C43E7A97CEA15 /* FontAwesome.ttf */; };
-		C5E99A301CD5461200084AA1 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5E99A2F1CD5461200084AA1 /* CaviarDreams_Bold.ttf */; };
-		C5E99A381CD5462E00084AA1 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5E99A371CD5462E00084AA1 /* CaviarDreams_BoldItalic.ttf */; };
-		C5E99A3A1CD5463200084AA1 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5E99A391CD5463200084AA1 /* CaviarDreams_Italic.ttf */; };
-		C5E99A3C1CD5463600084AA1 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5E99A3B1CD5463600084AA1 /* CaviarDreams.ttf */; };
+		C5785D691CD5A75A0044A1A3 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5785D651CD5A75A0044A1A3 /* CaviarDreams.ttf */; };
+		C5785D6A1CD5A75A0044A1A3 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5785D661CD5A75A0044A1A3 /* CaviarDreams_Italic.ttf */; };
+		C5785D6B1CD5A75A0044A1A3 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5785D671CD5A75A0044A1A3 /* CaviarDreams_BoldItalic.ttf */; };
+		C5785D6C1CD5A75A0044A1A3 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5785D681CD5A75A0044A1A3 /* CaviarDreams_Bold.ttf */; };
 		C7C4D0FAFEB3481BA675B770 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 703F3518B29148A3AC446483 /* Ionicons.ttf */; };
 		C97CF38ED84A466C88FE11D0 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60994D451CE24DA8B47D078D /* libRNVectorIcons.a */; };
 		E0495619423146259D546EE0 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE11FA6FC3B1499D9F4C48CC /* Foundation.ttf */; };
@@ -164,10 +164,10 @@
 		8EF745F66FC74BDD8678AB33 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		9AD90A5FB369483CB6AA0FD6 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		C195918C9E85479C85EBE97B /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		C5E99A2F1CD5461200084AA1 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Bold.ttf; path = ../../../Downloads/caviar_dreams/CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
-		C5E99A371CD5462E00084AA1 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_BoldItalic.ttf; path = ../../../Downloads/caviar_dreams/CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
-		C5E99A391CD5463200084AA1 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Italic.ttf; path = ../../../Downloads/caviar_dreams/CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
-		C5E99A3B1CD5463600084AA1 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams.ttf; path = ../../../Downloads/caviar_dreams/CaviarDreams.ttf; sourceTree = "<group>"; };
+		C5785D651CD5A75A0044A1A3 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams.ttf; path = ../../../Downloads/CaviarDreams.ttf; sourceTree = "<group>"; };
+		C5785D661CD5A75A0044A1A3 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Italic.ttf; path = ../../../Downloads/CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
+		C5785D671CD5A75A0044A1A3 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_BoldItalic.ttf; path = ../../../Downloads/CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
+		C5785D681CD5A75A0044A1A3 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Bold.ttf; path = ../../../Downloads/CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
 		E14AA85F357C43E7A97CEA15 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		EE11FA6FC3B1499D9F4C48CC /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,10 +366,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				C5E99A2F1CD5461200084AA1 /* CaviarDreams_Bold.ttf */,
-				C5E99A371CD5462E00084AA1 /* CaviarDreams_BoldItalic.ttf */,
-				C5E99A391CD5463200084AA1 /* CaviarDreams_Italic.ttf */,
-				C5E99A3B1CD5463600084AA1 /* CaviarDreams.ttf */,
+				C5785D651CD5A75A0044A1A3 /* CaviarDreams.ttf */,
+				C5785D661CD5A75A0044A1A3 /* CaviarDreams_Italic.ttf */,
+				C5785D671CD5A75A0044A1A3 /* CaviarDreams_BoldItalic.ttf */,
+				C5785D681CD5A75A0044A1A3 /* CaviarDreams_Bold.ttf */,
 				13B07FAE1A68108700A75B9A /* CornellPulse */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CornellPulseTests */,
@@ -613,17 +613,17 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				C5E99A381CD5462E00084AA1 /* CaviarDreams_BoldItalic.ttf in Resources */,
 				F777BC51C96242B3BE04E98E /* Entypo.ttf in Resources */,
-				C5E99A3A1CD5463200084AA1 /* CaviarDreams_Italic.ttf in Resources */,
-				C5E99A301CD5461200084AA1 /* CaviarDreams_Bold.ttf in Resources */,
 				725ACAF81A69447695F7D24E /* EvilIcons.ttf in Resources */,
 				916DF1C6C3B445E2941F306A /* FontAwesome.ttf in Resources */,
-				C5E99A3C1CD5463600084AA1 /* CaviarDreams.ttf in Resources */,
+				C5785D691CD5A75A0044A1A3 /* CaviarDreams.ttf in Resources */,
+				C5785D6C1CD5A75A0044A1A3 /* CaviarDreams_Bold.ttf in Resources */,
+				C5785D6A1CD5A75A0044A1A3 /* CaviarDreams_Italic.ttf in Resources */,
 				E0495619423146259D546EE0 /* Foundation.ttf in Resources */,
 				C7C4D0FAFEB3481BA675B770 /* Ionicons.ttf in Resources */,
 				6CF1C9EF27A044E8895732BC /* MaterialIcons.ttf in Resources */,
 				52727C4DA25E4783AB3BFB33 /* Octicons.ttf in Resources */,
+				C5785D6B1CD5A75A0044A1A3 /* CaviarDreams_BoldItalic.ttf in Resources */,
 				FBA89DE83D434316BE3682E8 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
