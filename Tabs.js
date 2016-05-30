@@ -5,6 +5,7 @@ var React = require('react-native');
 var Dining = require('./Dining');
 var Fitness = require('./Fitness');
 var More = require('./More');
+var Fetcher = require('./Fetcher.js');
 
 var Icon = require('react-native-vector-icons/MaterialIcons');
 
@@ -14,6 +15,8 @@ var {
   TabBarIOS,
   View,
 } = React;
+
+
 
 var Tabs = React.createClass({
   getInitialState() {
@@ -29,7 +32,8 @@ var Tabs = React.createClass({
           onPress={() => this.setState({selectedTab: "Fitness"})}
           title="Fitness">
 
-          <Fitness
+          <Fetcher
+            display={"Fitness"}
             {...this.props} // shorthand for sending all props down to Fitness
           />
 
@@ -49,7 +53,8 @@ var Tabs = React.createClass({
           onPress={() => this.setState({selectedTab: "Dining"})}
           title="Dining">
 
-          <Dining 
+          <Fetcher
+            display={"Dining"}
             {...this.props}
           />
 

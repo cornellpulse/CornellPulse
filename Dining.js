@@ -17,39 +17,37 @@ var UsageBar = require('./UsageBar.js');
 var Location = require('./Location.js');
 var Filter = require('./Filter.js');
 var PageHeaderText = require('./PageHeaderText');
+
  
+var cardinalLocations = {
+  'North': ["Bear Necessities Grill & C-Store", "Carol's Cafe", "North Star Dining Room", "Risley Dining Room", "Robert Purcell Marketplace Eatery", "Sweet Sensations"],
+  'West': ["Cook House Dining Room", "Becker House Dining Room", "Jansen's Market", "Jansen's Dining Room at Bethe House", "Keeton House Dining Room", "104West!", "Rose House Dining Room"],
+  'Central': ["Big Red Barn", "Bus Stop Bagels", "Café Jennie", "Mattin's Café", "Goldie's Café", "Green Dragon", "Ivy Room", "Martha's Café", "Okenshields", "Amit Bhatia Libe Café", "Rusty's", "Atrium Café", "Synapsis Café", "Trillium"]}
 
 
 var Dining = React.createClass({
+    propTypes: {
+        allData: React.PropTypes.object,
+    },
+
     getInitialState() {
+        var filterBy = "North";
+        var subsetList = cardinalLocations[filterBy];
+
 
         var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
-        return {dataSource: ds.cloneWithRows([]),
-                allData: [] };
+
+        return {filterBy: 'North', dataSource: ds.cloneWithRows(this.props.allData.diners.filter(el => subsetList.includes(el.location)))};
     },
 
-    _fetchDinerData() {
-        /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
-        var endpoint = 'http://cornellpulse.com:3000/api';
+    click(filterByString) {
+        this.setState({filterBy : filterByString}); 
+        var subsetList = cardinalLocations[filterByString];
 
-        fetch(endpoint)
-            .then((response) => response.json())
-            .then((responseJSON) => {
-                // console.log(responseJSON);
-                this.setState({allData: responseJSON.diners,
-                               dataSource: this.state.dataSource.cloneWithRows(responseJSON.diners) });
-            })
-            .catch((error) => { console.warn(error); });
-    },
-
-    changeList(list) { 
         /* Sets the data source of the dining component.
-        Ultimately, this function get's past to <Filter /> */
-        this.setState({dataSource: this.state.dataSource.cloneWithRows(list) });
-    },
-
-    componentDidMount() {
-        this._fetchDinerData();
+        Ultimately, this function gets past to <Filter /> */
+        var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
+        this.setState({dataSource: ds.cloneWithRows(this.props.allData.diners.filter(el => subsetList.includes(el.location)))})
     },
 
 
@@ -57,53 +55,32 @@ var Dining = React.createClass({
         var count = rowData.count ? rowData.count : 0; // if no count available, then count is 0.
         var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
         var ratio = (count/peak) > 1 ? 1 : (count/peak); 
-        // Testing image stuff
+        
         return (
-
-                    
-
-         <TouchableHighlight
-            underlayColor='#DDDDDD'
-            onPress={() => this.props.onForward(Location, rowData.location)}>
-            <View style={[styles.container, this.border('white')]}>
-                <View style={[styles.block, this.border('white')]}>
-                    <View style={[styles.listitem, this.border('white')]}>
-                        <View style={[styles.image, this.border('white')]}>
-                            <Image
-                                style={{height: 40, width: 40, borderColor: 'black', borderWidth: 2}} 
-                                source={{uri: rowData.image}}
-                                resizeMode='contain' />
-                        </View>
-                        <View style={[styles.location, this.border('white')]}>
-                            <Text>{rowData.location}</Text>
-                        </View>
-                        <View style={[styles.percentage]}>
-                             <UsageBar percentage={ratio * 100}/>
-                        </View>
+    
+             <TouchableHighlight
+                underlayColor='#DDDDDD'
+                onPress={() => this.props.onForward(Location, rowData.location)}>
+                <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80}}>         
+                    <View style={{marginLeft : 20, marginTop: 25}}>
+                        <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{rowData.location.substr(0,27)}</Text>
+                    </View>
+                    <View style={{marginRight : 20}}>
+                        <UsageBar percentage={ratio * 100}/>
                     </View>
                 </View>
-                <View style={[styles.separator]}/>
-            </View>
-        </TouchableHighlight>
+            </TouchableHighlight>
 
         );
     },
 
-    border: function(color){
-        return {
-          borderColor: color,
-          borderWidth: 4
-        }
-    },
-
-
     render() {
         return (
-
-            <View style={[styles.container, {paddingTop: 30}]}>
+            <View style={{height: 700, backgroundColor: "#33648C", paddingTop: 30}}>
                 <PageHeaderText title="Dining" />
-                <Filter allData={this.state.allData} changeList={this.changeList}/>
+                <Filter enabled={true} filterList={["North", "West", "Central"]} filterBy={this.state.filterBy} click={this.click} />
                 <ListView
+                    style={{backgroundColor: '#33648C'}}
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow} />
             </View>
@@ -111,109 +88,6 @@ var Dining = React.createClass({
     }
 })
 
-var styles = StyleSheet.create({
-    container: {
-        // paddingTop: 30, // Makes the filter sit below the carrier info on ios.
-        flex: 1, // makes the ListView Scrollable (Do not touch) http://stackoverflow.com/questions/32874559/listview-fails-to-scroll
-        alignSelf: 'auto',
-        justifyContent: 'center',
-    },
-    listitem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 80
-    },
-    location: {
-        flex: 3
-    },
-    locationText: {
-        fontWeight: 'bold', 
-        fontSize: 20,
-    },
-    image: {
-    },
-    percentage: {
-        flex: 2,
-        justifyContent: 'flex-end',
-        marginRight: 10
-    },
-    separator: {    
-        borderColor: 'gray',
-        borderWidth: 1
-    }
 
-    // height: 36,
-    // backgroundColor: '#48BBEC',
-    // borderColor: '#48BBEC',
-    // borderWidth: 1,
-    // borderRadius: 8,
-    // marginBottom: 10,
-    // alignSelf: 'stretch',
-    // justifyContent: 'center'
-});
-
-// var styles = StyleSheet.create({
-//     container: {
-//         height: 80,
-//         alignSelf: 'auto',
-        
-//     },
-//     block: {
-//     },
-//     listitem: {
-//         flexDirection: 'row',
-//     },
-//     location: {
-//         flex: 3
-//     },
-//     locationText: {
-//         fontWeight: 'bold', 
-//         fontSize: 20
-//     },
-//     percentage: {
-//         flex: 2,
-//         justifyContent: 'flex-end'
-//     },
-//     description: {
-//         fontSize: 20,
-//         backgroundColor: 'white'
-//     },
-//     container: {
-//         position: 'absolute', 
-//         flexDirection: 'column',
-//         top: 30,
-//         left: 0,
-//         right: 0,
-//         bottom: 0
-//     },
-//     separator: {
-//         height: 1,
-//         backgroundColor: '#dddddd'
-//     },
-//     listitem: {
-//         height: 80,
-//     },
-//     gymName: {
-//         paddingTop: 40, // half of the listitem height (centers the text vertically)
-//     },
-//     chart: {
-//         height: 80,
-//         flex: 2,
-//         // borderWidth: 2,
-//         // borderColor: "#00ff00",
-
-//     },
-//     block: {
-//         flexDirection: 'row',
-//         // borderWidth: 1,
-//         // borderColor: "#dddddd"
-//     }
-// });
-
-// Image style={styles.logo}>
-//                             style={{height: 40, width: 40}}
-//                             resizeMode='contain'
-//                             source={{uri: rowData.image}} </Image
 
 module.exports = Dining;

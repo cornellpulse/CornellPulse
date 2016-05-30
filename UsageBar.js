@@ -9,25 +9,6 @@ var {
 } = React;
 
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-  },
-
-  bar: {
-    // borderColor: 'black',
-    // borderWidth: 2,
-    width: 100,
-    height: 20,
-    backgroundColor: '#15337E'
-  }
-})
-
-
-
 var UsageBar = React.createClass({
   propTypes : {
     percentage: React.PropTypes.number.isRequired // a number that represents how filled the bar is
@@ -51,8 +32,8 @@ var UsageBar = React.createClass({
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.bar}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
+        <View style={{width:100, height: 20, backgroundColor: '#15337E'}}>
           <View style={this.getBarStyle()}>
           </View>
         </View>

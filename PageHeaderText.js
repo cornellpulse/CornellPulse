@@ -19,17 +19,10 @@ var PageHeaderText = React.createClass({
 	
 	render() {
 		return (
-			<Text style={styles.header}>
+			<Text style={{paddingBottom: 10, alignSelf: 'center', fontFamily: 'Caviar Dreams', fontSize: 20}}>
 				{this.props.title}
 			</Text>
 		);
-	}
-})
-
-var styles = StyleSheet.create({
-	header: {
-		paddingBottom: 10,
-		alignSelf: 'center',
 	}
 })
 

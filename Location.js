@@ -10,34 +10,19 @@ var {
   View,
 } = React;
 
-var styles = StyleSheet.create({
-  backButton: {
-    height: 80, 
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: "black", 
-  },
-  container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-   },
-})
 
 var Location = React.createClass({
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>{this.props.route.name}</Text>
         <TouchableHighlight
           underlayColor="#DDDDDD"
           onPress={() => this.props.onBack()}
-          style={styles.backButton}>
+          style={{height:80, justifyContent: 'center', borderWidth: 1, borderColor: 'black'}}>
           <Text>Go Back</Text>
         </TouchableHighlight>
       </View>
-
-
     );
   }
 })

@@ -1,73 +1,41 @@
-'use strict'
+'use strict';
 
 var React = require('react-native');
 
 var {
   StyleSheet,
+  Text, 
   View,
-  Text,
-  Component,
   TouchableHighlight,
-  SegmentedControlIOS
-  } = React;
+} = React;
 
-var cardinalLocations = {
-  'North': ["Bear Necessities Grill & C-Store", "Carol's Cafe", "North Star Dining Room", "Risley Dining Room", "Robert Purcell Marketplace Eatery", "Sweet Sensations"],
-  'West': ["Cook House Dining Room", "Becker House Dining Room", "Jansen's Market", "Jansen's Dining Room at Bethe House", "Keeton House Dining Room", "104West!", "Rose House Dining Room"],
-  'Central': ["Big Red Barn", "Bus Stop Bagels", "Café Jennie", "Mattin's Café", "Goldie's Café", "Green Dragon", "Ivy Room", "Martha's Café", "Okenshields", "Amit Bhatia Libe Café", "Rusty's", "Atrium Café", "Synapsis Café", "Trillium"]}
+var FilterBox = require('./FilterBox.js');
+ 
 
 var Filter = React.createClass({
-  getInitialState() {
-    return {
-      values: ['North', 'West', 'Central'],
-      selectedIndex: 2,
-    }
+  propTypes: {
+    enabled: React.PropTypes.bool,
+    filterList: React.PropTypes.array.isRequired, // an array that has the names of the filter segments (ex. ['West', 'North', 'Central', ...])
+    filterBy: React.PropTypes.string,
+    click: React.PropTypes.func,
   },
-
-  _onChange(event) {
-    var newIndex = event.nativeEvent.selectedSegmentIndex;
-    var filterBy = this.state.values[newIndex];
-    // console.log(filterBy);
-
-    var newList = this.filter(filterBy);
-
-    this.setState({selectedIndex: newIndex});
-    this.props.changeList(newList);
-  },
-
-  filter(delimiter) {
-    var cardinal = cardinalLocations[delimiter];
-    
-    var filteredList = this.props.allData.filter((el) => 
-                              cardinal.indexOf(el.location) != -1); 
-
-    return filteredList;
-  },
-
-
 
   render() {
     return (
-        <View style={styles.outerFilter}>
-          <View>
-          </View>
-          <View>
-          </View>
-          <View>
-          </View>
-        </View>
-      )
+      <View style={{flexDirection: 'row', borderColor: 'black', borderWidth: 2, height: 40, marginTop: 10}}>
+        {this.props.filterList.map((el, inx) => 
+          <FilterBox
+            enabled={this.props.enabled}
+            key={inx} 
+            name={el}
+            isHighlighted={el === this.props.filterBy}
+            onClick={() => this.props.click(el)}
+          />
+        )}
+      </View>
+    );
   }
-});
+})
 
-var styles = StyleSheet.create({
-  outerFilter: { // goes on the box that surrounds West, North, and Central
-
-  },
-
-  innerFilter: { // goes on the 'West', 'North', 'Central' Views
-
-  }
-}) 
 
 module.exports = Filter;
