@@ -25,11 +25,10 @@ var Filter = React.createClass({
       <View style={{flexDirection: 'row', borderColor: 'black', borderWidth: 2, height: 40, marginTop: 10}}>
         {this.props.filterList.map((el, inx) => 
           <FilterBox
-            enabled={this.props.enabled}
             key={inx} 
             name={el}
             isHighlighted={el === this.props.filterBy}
-            onClick={() => this.props.click(el)}
+            onClick={() => {return this.props.enabled ? this.props.click(el) : undefined}}
           />
         )}
       </View>

@@ -32,7 +32,6 @@ var Fetcher = React.createClass({
     	this._fetchAllData();
     },
 
-
 	render() {
 		if (Object.keys(this.state.allData).length === 0) {
 			return(

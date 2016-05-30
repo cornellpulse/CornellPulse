@@ -12,7 +12,6 @@ var {
 
 var FilterBox = React.createClass({
     propTypes: {
-        enabled: React.PropTypes.bool,
         name: React.PropTypes.string.isRequired, // name of the filter box: (ie. West, North, Central)
         isHighlighted : React.PropTypes.bool.isRequired,
         onClick : React.PropTypes.func.isRequired,
