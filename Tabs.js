@@ -38,7 +38,7 @@ var Tabs = React.createClass({
           />
 
         </Icon.TabBarItemIOS>
-        <Icon.TabBarItemIOS
+        {/*<Icon.TabBarItemIOS
           iconName="email"
           selected={this.state.selectedTab == "Feedback"}
           onPress={() => this.setState({selectedTab: "Feedback"})}
@@ -46,7 +46,7 @@ var Tabs = React.createClass({
 
           <More />
 
-        </Icon.TabBarItemIOS>  
+        </Icon.TabBarItemIOS>*/}  
         <Icon.TabBarItemIOS
           iconName="restaurant"
           selected={this.state.selectedTab == "Dining"}

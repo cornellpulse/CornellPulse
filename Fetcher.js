@@ -17,7 +17,7 @@ var Fetcher = React.createClass({
 
 	_fetchAllData() {
         /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
-        var endpoint = 'http://cornellpulse.com:3000/api';
+        var endpoint = 'http://cornellpulse.com:3000/test';
 
         fetch(endpoint)
             .then((response) => response.json())
