@@ -7,8 +7,8 @@ var {
     ActivityIndicatorIOS,
    } = React;
 
-var Fitness = require('./Fitness.js');
-var Dining = require('./Dining.js');
+var Fitness = require('./pages/Fitness.js');
+var Dining = require('./pages/Dining.js');
 
 var Fetcher = React.createClass({
 	getInitialState() {

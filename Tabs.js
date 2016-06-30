@@ -2,9 +2,9 @@
 
 var React = require('react-native');
 
-var Dining = require('./Dining');
-var Fitness = require('./Fitness');
-var More = require('./More');
+var Dining = require('./pages/Dining');
+var Fitness = require('./pages/Fitness');
+var More = require('./pages/More');
 var Fetcher = require('./Fetcher.js');
 
 var Icon = require('react-native-vector-icons/MaterialIcons');

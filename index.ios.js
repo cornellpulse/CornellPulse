@@ -3,10 +3,7 @@
 var React = require('react-native');
 
 var Tabs = require('./Tabs.js');
-var Dining = require('./Dining.js');
 
-
- 
 var {
     AppRegistry,
     Navigator,
@@ -51,16 +48,5 @@ class CornellPulse extends React.Component {
     );
   }
  }
-
- var styles = StyleSheet.create({
-  tabContent: {
-    flex: 1,
-    alignItems: 'center'
-  },
-  tabText: {
-    margin:50,
-    fontSize: 45
-  }
- });
 
 AppRegistry.registerComponent('CornellPulse', () => CornellPulse);
