@@ -19,7 +19,7 @@ var PageHeaderText = React.createClass({
 	
 	render() {
 		return (
-			<Text style={{paddingBottom: 10, alignSelf: 'center', fontFamily: 'Caviar Dreams', fontSize: 20}}>
+			<Text style={{paddingBottom: 10, alignSelf: 'center', fontFamily: 'Caviar Dreams', fontSize: 20, fontWeight: 'bold', color: 'white'}}>
 				{this.props.title}
 			</Text>
 		);
