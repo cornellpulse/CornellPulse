@@ -18,6 +18,15 @@ var Location = require('./Location.js');
 var Filter = require('../components/Filter.js');
 var PageHeaderText = require('../components/PageHeaderText');
 
+function shortenName(locationName) {
+    /*Shortens the longer location names on this list to their more colloquial names.*/
+    var longNames = {"Bear Necessities Grill & C-Store":"Bear Necessities", 
+                    "Robert Purcell Marketplace Eatery":"RPCC", 
+                    "Jansen's Dining Room at Bethe House":"Bethe House Dining Room"};
+    return longNames[locationName] ? longNames[locationName] : locationName;
+
+}
+
  
 var cardinalLocations = {
   'North': ["Bear Necessities Grill & C-Store", "Carol's Cafe", "North Star Dining Room", "Risley Dining Room", "Robert Purcell Marketplace Eatery", "Sweet Sensations"],
@@ -63,7 +72,7 @@ var Dining = React.createClass({
                 onPress={() => this.props.onForward(Location, rowData.location)}>
                 <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80}}>         
                     <View style={{marginLeft : 20, marginTop: 25}}>
-                        <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{rowData.location.substr(0,27)}</Text>
+                        <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
                     </View>
                     <View style={{marginRight : 20}}>
                         <UsageBar percentage={ratio * 100}/>
