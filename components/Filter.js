@@ -23,13 +23,23 @@ var Filter = React.createClass({
   render() {
     return (
       <View style={{flexDirection: 'row', borderColor: '#5C6890', borderWidth: 2, height: 40, marginTop: 10}}>
-        {this.props.filterList.map((el, inx) => 
-          <FilterBox
-            key={inx} 
-            name={el}
-            isHighlighted={el === this.props.filterBy}
-            onClick={() => {return this.props.enabled ? this.props.click(el) : undefined}}
-          />
+        {this.props.filterList.map((el, inx) => {
+          if (el === "All") {
+            return (<FilterBox
+                    key={inx} 
+                    name={el}
+                    isHighlighted={el === this.props.filterBy}
+                    // By omitting onClick, This Touchable Highlight cannot be pressed.
+                  />)
+          } else {
+            return (<FilterBox
+                  key={inx} 
+                  name={el}
+                  isHighlighted={el === this.props.filterBy}
+                  onClick={() => { return this.props.enabled ? this.props.click(el) : undefined }}
+                />)
+          } 
+        } 
         )}
       </View>
     );
