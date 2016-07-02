@@ -18,6 +18,25 @@ var PageHeaderText = require('../components/PageHeaderText');
 var Filter = require('../components/Filter.js');
 
 
+function filterClosed(locationList, subsetList) {
+    /*returns */
+    var closed = []; // holds location objects that are closed
+    var open = []; 
+
+    locationList.forEach(el => {
+        if (subsetList.indexOf(el.location) != -1) {
+            if (el.status === 'Closed') {
+                closed.push(el);
+            } else {
+                open.push(el);
+            }
+        } 
+    })
+    return open.concat(closed);
+}
+
+var fitnessLocations = ['Appel', 'Noyes', 'Teagle Up', 'Teagle Down', 'Newman'];
+
 var cardinalLocations = {
   'North': ["Bear Necessities Grill & C-Store", "Carol's Cafe", "North Star Dining Room", "Risley Dining Room", "Robert Purcell Marketplace Eatery", "Sweet Sensations"],
   'West': ["Cook House Dining Room", "Becker House Dining Room", "Jansen's Market", "Jansen's Dining Room at Bethe House", "Keeton House Dining Room", "104West!", "Rose House Dining Room"],
@@ -31,7 +50,7 @@ var Fitness = React.createClass({
 
     getInitialState() {
         var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
-        return {filterBy: 'All', dataSource: ds.cloneWithRows(this.props.allData.gyms) };
+        return {filterBy: 'All', dataSource: ds.cloneWithRows(filterClosed(this.props.allData.gyms, fitnessLocations))};
     },
 
     click(filterByString) {

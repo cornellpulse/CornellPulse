@@ -27,6 +27,23 @@ function shortenName(locationName) {
 
 }
 
+function filterClosed(locationList, subsetList) {
+    /*returns */
+    var closed = []; // holds location objects that are closed
+    var open = []; 
+
+    locationList.forEach(el => {
+        if (subsetList.indexOf(el.location) != -1) {
+            if (el.status === 'Closed') {
+                closed.push(el);
+            } else {
+                open.push(el);
+            }
+        } 
+    })
+    return open.concat(closed);
+}
+
  
 var cardinalLocations = {
   'North': ["Bear Necessities Grill & C-Store", "Carol's Cafe", "North Star Dining Room", "Risley Dining Room", "Robert Purcell Marketplace Eatery", "Sweet Sensations"],
@@ -46,7 +63,7 @@ var Dining = React.createClass({
 
         var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
 
-        return {filterBy: 'North', dataSource: ds.cloneWithRows(this.props.allData.diners.filter(el => subsetList.includes(el.location)))};
+        return {filterBy: 'North', dataSource: ds.cloneWithRows(filterClosed(this.props.allData.diners, subsetList))};
     },
 
     click(filterByString) {
@@ -56,7 +73,7 @@ var Dining = React.createClass({
         /* Sets the data source of the dining component.
         Ultimately, this function gets past to <Filter /> */
         var ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2 });
-        this.setState({dataSource: ds.cloneWithRows(this.props.allData.diners.filter(el => subsetList.includes(el.location)))})
+        this.setState({dataSource: ds.cloneWithRows(filterClosed(this.props.allData.diners, subsetList))});
     },
 
 
