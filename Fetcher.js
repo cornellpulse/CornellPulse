@@ -35,7 +35,7 @@ var Fetcher = React.createClass({
 	render() {
 		if (Object.keys(this.state.allData).length === 0) {
 			return(
-                <View style={{alignItems: 'center'}}>
+                <View style={{flex: 1, justifyContent: 'center'}}>
                     <ActivityIndicatorIOS animating={true} size='large'/>
                 </View>
 
