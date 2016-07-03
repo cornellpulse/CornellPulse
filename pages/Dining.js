@@ -9,6 +9,7 @@ var {
     Image,
     ListView,
     TouchableHighlight,
+    TouchableOpacity,
     Component,
     SegmentedControlIOS,
    } = React;
@@ -82,22 +83,35 @@ var Dining = React.createClass({
         var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
         var ratio = (count/peak) > 1 ? 1 : (count/peak); 
         
-        return (
-    
-             <TouchableHighlight
-                underlayColor='#DDDDDD'
-                onPress={() => this.props.onForward(Location, rowData.location)}>
-                <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80}}>         
-                    <View style={{marginLeft : 20, marginTop: 25}}>
-                        <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
+        if (rowData.status === "Closed") {
+            return (
+                <TouchableOpacity
+                    underlayColor='#DDDDDD'
+                    onPress={() => this.props.onForward(Location, rowData.location)}>
+                    <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#545454', opacity: .4}}>         
+                        <View style={{marginLeft : 20, marginTop: 25}}>
+                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
+                        </View>
+                        <View style={{marginRight : 20}}>
+                            <UsageBar percentage={ratio * 100}/>
+                        </View>
                     </View>
-                    <View style={{marginRight : 20}}>
-                        <UsageBar percentage={ratio * 100}/>
+                </TouchableOpacity>);
+        } else {
+            return (
+                <TouchableHighlight
+                    underlayColor='#DDDDDD'
+                    onPress={() => this.props.onForward(Location, rowData.location)}>
+                    <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80}}>         
+                        <View style={{marginLeft : 20, marginTop: 25}}>
+                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
+                        </View>
+                        <View style={{marginRight : 20}}>
+                            <UsageBar percentage={ratio * 100}/>
+                        </View>
                     </View>
-                </View>
-            </TouchableHighlight>
-
-        );
+                </TouchableHighlight>);
+        }
     },
 
     render() {
