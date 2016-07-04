@@ -33,7 +33,7 @@ var Filter = React.createClass({
                   />)
           } else {
             return (<FilterBox
-                  key={inx} 
+                  key={inx}
                   name={el}
                   isHighlighted={el === this.props.filterBy}
                   onClick={() => { return this.props.enabled ? this.props.click(el) : undefined }}

@@ -42,6 +42,7 @@ class CornellPulse extends React.Component {
   render() {
     return (
       <Navigator
+        style={{backgroundColor: '#2F4F4F'}}
         initialRoute={{name: 'Home', index: 0, component: Tabs}}
         renderScene={this._renderScene}
       />

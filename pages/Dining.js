@@ -94,7 +94,6 @@ var Dining = React.createClass({
                         </View>
                         <View style={{marginRight : 30, marginTop: 25}}>
                             <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>Closed</Text>
-                            {/*<UsageBar percentage={ratio * 100}/>*/}
                         </View>
                     </View>
                 </TouchableOpacity>);
@@ -118,12 +117,12 @@ var Dining = React.createClass({
     render() {
         return (
             <Image 
-                style={{flex: 1, width: null, height: null, paddingTop: 30}}
+                style={{width: null, height: 700, paddingTop: 30}} 
                 source={require('../assets/background.jpg')}>
                 <PageHeaderText title="Dining" />
                 <Filter enabled={true} filterList={["North", "West", "Central"]} filterBy={this.state.filterBy} click={this.click} />
-                
                 <ListView
+                    automaticallyAdjustContentInsets={false}
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow} />
                 
