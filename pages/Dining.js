@@ -12,6 +12,7 @@ var {
     TouchableOpacity,
     Component,
     SegmentedControlIOS,
+    ScrollView,
    } = React;
 
 var UsageBar = require('../components/UsageBar.js');
@@ -25,7 +26,6 @@ function shortenName(locationName) {
                     "Robert Purcell Marketplace Eatery":"RPCC", 
                     "Jansen's Dining Room at Bethe House":"Bethe House Dining Room"};
     return longNames[locationName] ? longNames[locationName] : locationName;
-
 }
 
 function filterClosed(locationList, subsetList) {
@@ -92,8 +92,9 @@ var Dining = React.createClass({
                         <View style={{marginLeft : 20, marginTop: 25}}>
                             <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
                         </View>
-                        <View style={{marginRight : 20}}>
-                            <UsageBar percentage={ratio * 100}/>
+                        <View style={{marginRight : 30, marginTop: 25}}>
+                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>Closed</Text>
+                            {/*<UsageBar percentage={ratio * 100}/>*/}
                         </View>
                     </View>
                 </TouchableOpacity>);
@@ -116,14 +117,17 @@ var Dining = React.createClass({
 
     render() {
         return (
-            <View style={{height: 700, backgroundColor: "#33648C", paddingTop: 30}}>
+            <Image 
+                style={{flex: 1, width: null, height: null, paddingTop: 30}}
+                source={require('../assets/background.jpg')}>
                 <PageHeaderText title="Dining" />
                 <Filter enabled={true} filterList={["North", "West", "Central"]} filterBy={this.state.filterBy} click={this.click} />
+                
                 <ListView
-                    style={{backgroundColor: '#33648C'}}
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow} />
-            </View>
+                
+            </Image>
         );
     }
 })

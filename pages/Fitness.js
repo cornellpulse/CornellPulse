@@ -10,7 +10,8 @@ var {
     ListView,
     TouchableHighlight,
     TouchableOpacity,
-    LayoutPropTypes
+    LayoutPropTypes,
+    Image
    } = React;
 
 var UsageBar = require('../components/UsageBar');
@@ -20,7 +21,6 @@ var Filter = require('../components/Filter.js');
 
 
 function filterClosed(locationList, subsetList) {
-    /*returns */
     var closed = []; // holds location objects that are closed
     var open = []; 
 
@@ -78,8 +78,9 @@ var Fitness = React.createClass({
                         <View style={{marginLeft : 20, marginTop: 25}}>
                             <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{rowData.location}</Text>
                         </View>
-                        <View style={{marginRight : 20}}>
-                            <UsageBar percentage={ratio * 100}/>
+                        <View style={{marginRight : 30, marginTop: 25}}>
+                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>Closed</Text>
+                            {/*<UsageBar percentage={ratio * 100}/>*/}
                         </View>
                     </View>
                 </TouchableOpacity>);
@@ -102,14 +103,16 @@ var Fitness = React.createClass({
 
     render() {
         return (
-                <View style={{height: 700, backgroundColor: "#33648C", paddingTop: 30}}>
+                <Image 
+                    style={{flex: 1, width: null, height: null, paddingTop: 30}}
+                    source={require('../assets/background.jpg')}>
                     <PageHeaderText title="Fitness"/>
                     <Filter enabled={false} filterList={["All"]} filterBy={this.state.filterBy} click={this.click} />
                     <ListView
-                        style={{backgroundColor: '#33648C'}}
+                        style={{}}
                         dataSource={this.state.dataSource}
                         renderRow={(rowData) => this._renderRow(rowData)} />
-                </View>
+                </Image>
         );
     },
 

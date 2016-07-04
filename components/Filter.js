@@ -28,7 +28,7 @@ var Filter = React.createClass({
             return (<FilterBox
                     key={inx} 
                     name={el}
-                    isHighlighted={el === this.props.filterBy}
+                    isHighlighted={false}
                     // By omitting onClick, This Touchable Highlight cannot be pressed.
                   />)
           } else {
