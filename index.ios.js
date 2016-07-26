@@ -1,6 +1,7 @@
  'use strict';
  
 var React = require('react-native');
+var Home = require('./pages/Home.js')
 
 var Tabs = require('./Tabs.js');
 
@@ -43,8 +44,9 @@ class CornellPulse extends React.Component {
     return (
       <Navigator
         style={{backgroundColor: '#2F4F4F'}}
-        initialRoute={{name: 'Home', index: 0, component: Tabs}}
+        initialRoute={{name: 'Home', index: 0, component: Home}}
         renderScene={this._renderScene}
+        configureScene={(route, routeStack) => Navigator.SceneConfigs.HorizontalSwipeJump}
       />
     );
   }
