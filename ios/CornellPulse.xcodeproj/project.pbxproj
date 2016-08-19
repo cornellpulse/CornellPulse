@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -22,15 +21,25 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		25835D3C385543C9B7B19E06 /* libRNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B022497065745DCB7AA2CC0 /* libRNChart.a */; };
-		2B149EE21CD55BE10009FCA1 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EDE1CD55BE10009FCA1 /* CaviarDreams_Bold.ttf */; settings = {ASSET_TAGS = (); }; };
-		2B149EE31CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EDF1CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
-		2B149EE41CD55BE10009FCA1 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EE01CD55BE10009FCA1 /* CaviarDreams_Italic.ttf */; settings = {ASSET_TAGS = (); }; };
-		2B149EE51CD55BE10009FCA1 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EE11CD55BE10009FCA1 /* CaviarDreams.ttf */; settings = {ASSET_TAGS = (); }; };
+		2B39EB3AFFFAC95ABF6AAB0F /* libPods-CornellPulse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D97342F85FF954E30857AA /* libPods-CornellPulse.a */; };
 		52727C4DA25E4783AB3BFB33 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5644225EF3784AC49C014880 /* Octicons.ttf */; };
 		6CF1C9EF27A044E8895732BC /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EF745F66FC74BDD8678AB33 /* MaterialIcons.ttf */; };
 		725ACAF81A69447695F7D24E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD90A5FB369483CB6AA0FD6 /* EvilIcons.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		916DF1C6C3B445E2941F306A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E14AA85F357C43E7A97CEA15 /* FontAwesome.ttf */; };
+		C28C3ED9DAD59E5E3A93DB46 /* libPods-CornellPulseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BED5D7D2EE203B6D5161C0B /* libPods-CornellPulseTests.a */; };
+		C5F302141D6285E200388B99 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302101D6285E200388B99 /* CaviarDreams_Bold.ttf */; };
+		C5F302151D6285E200388B99 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302101D6285E200388B99 /* CaviarDreams_Bold.ttf */; };
+		C5F302161D6285E200388B99 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302111D6285E200388B99 /* CaviarDreams_BoldItalic.ttf */; };
+		C5F302171D6285E200388B99 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302111D6285E200388B99 /* CaviarDreams_BoldItalic.ttf */; };
+		C5F302181D6285E200388B99 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302121D6285E200388B99 /* CaviarDreams_Italic.ttf */; };
+		C5F302191D6285E200388B99 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302121D6285E200388B99 /* CaviarDreams_Italic.ttf */; };
+		C5F3021A1D6285E200388B99 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302131D6285E200388B99 /* CaviarDreams.ttf */; };
+		C5F3021B1D6285E200388B99 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5F302131D6285E200388B99 /* CaviarDreams.ttf */; };
+		C5F302371D628DB400388B99 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F302341D628DB400388B99 /* HockeySDK.framework */; };
+		C5F302381D628DB400388B99 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F302341D628DB400388B99 /* HockeySDK.framework */; };
+		C5F302391D628DB400388B99 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5F302361D628DB400388B99 /* HockeySDKResources.bundle */; };
+		C5F3023A1D628DB400388B99 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5F302361D628DB400388B99 /* HockeySDKResources.bundle */; };
 		C7C4D0FAFEB3481BA675B770 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 703F3518B29148A3AC446483 /* Ionicons.ttf */; };
 		C97CF38ED84A466C88FE11D0 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60994D451CE24DA8B47D078D /* libRNVectorIcons.a */; };
 		E0495619423146259D546EE0 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE11FA6FC3B1499D9F4C48CC /* Foundation.ttf */; };
@@ -130,6 +139,27 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		C5F3024D1D62B05500388B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5F302471D62B05500388B99 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 116CE6E50637DFAC7FE5F7BE0EE99912;
+			remoteInfo = "HockeySDK-HockeySDKResources";
+		};
+		C5F3024F1D62B05500388B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5F302471D62B05500388B99 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E7509F6F52FD3B1DC3DBA682BAE464A5;
+			remoteInfo = "Pods-CornellPulse";
+		};
+		C5F302511D62B05500388B99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5F302471D62B05500388B99 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AA4ECE94C883830C71F7CD644FD4DFD;
+			remoteInfo = "Pods-CornellPulseTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +173,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CornellPulseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CornellPulseTests.m; sourceTree = "<group>"; };
 		0B022497065745DCB7AA2CC0 /* libRNChart.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNChart.a; sourceTree = "<group>"; };
+		10BCFAE032B4A0E69338CD7A /* Pods-CornellPulseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornellPulseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CornellPulseTests/Pods-CornellPulseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CornellPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornellPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,10 +185,6 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CornellPulse/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1C3BF2CAE3D64995A2229A43 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
-		2B149EDE1CD55BE10009FCA1 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Bold.ttf; path = ../../Downloads/CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
-		2B149EDF1CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_BoldItalic.ttf; path = ../../Downloads/CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
-		2B149EE01CD55BE10009FCA1 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Italic.ttf; path = ../../Downloads/CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
-		2B149EE11CD55BE10009FCA1 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams.ttf; path = ../../Downloads/CaviarDreams.ttf; sourceTree = "<group>"; };
 		5644225EF3784AC49C014880 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		60994D451CE24DA8B47D078D /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		69CB9235A5D749C2AE96F59B /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
@@ -165,9 +192,21 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		8128FF5DCCEE48938A19A858 /* RNChart.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNChart.xcodeproj; path = "../node_modules/react-native-chart/RNChart.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8BED5D7D2EE203B6D5161C0B /* libPods-CornellPulseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CornellPulseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF745F66FC74BDD8678AB33 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		9AD90A5FB369483CB6AA0FD6 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		AE795DE84147621065B166BE /* Pods-CornellPulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornellPulse.release.xcconfig"; path = "Pods/Target Support Files/Pods-CornellPulse/Pods-CornellPulse.release.xcconfig"; sourceTree = "<group>"; };
+		B56E9A3067A87F1CB5A190F2 /* Pods-CornellPulseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornellPulseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CornellPulseTests/Pods-CornellPulseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C195918C9E85479C85EBE97B /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		C5F302101D6285E200388B99 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
+		C5F302111D6285E200388B99 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
+		C5F302121D6285E200388B99 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
+		C5F302131D6285E200388B99 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		C5F302341D628DB400388B99 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		C5F302361D628DB400388B99 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
+		C5F302471D62B05500388B99 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		C6D97342F85FF954E30857AA /* libPods-CornellPulse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CornellPulse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D282D0CEA0D94ABBC415E3EF /* Pods-CornellPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornellPulse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CornellPulse/Pods-CornellPulse.debug.xcconfig"; sourceTree = "<group>"; };
 		E14AA85F357C43E7A97CEA15 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		EE11FA6FC3B1499D9F4C48CC /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +216,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F302381D628DB400388B99 /* HockeySDK.framework in Frameworks */,
+				C28C3ED9DAD59E5E3A93DB46 /* libPods-CornellPulseTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +237,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				25835D3C385543C9B7B19E06 /* libRNChart.a in Frameworks */,
 				C97CF38ED84A466C88FE11D0 /* libRNVectorIcons.a in Frameworks */,
+				C5F302371D628DB400388B99 /* HockeySDK.framework in Frameworks */,
+				2B39EB3AFFFAC95ABF6AAB0F /* libPods-CornellPulse.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +382,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C5F302471D62B05500388B99 /* Pods.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -366,15 +410,18 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				2B149EDE1CD55BE10009FCA1 /* CaviarDreams_Bold.ttf */,
-				2B149EDF1CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf */,
-				2B149EE01CD55BE10009FCA1 /* CaviarDreams_Italic.ttf */,
-				2B149EE11CD55BE10009FCA1 /* CaviarDreams.ttf */,
+				C5F302101D6285E200388B99 /* CaviarDreams_Bold.ttf */,
+				C5F302111D6285E200388B99 /* CaviarDreams_BoldItalic.ttf */,
+				C5F302121D6285E200388B99 /* CaviarDreams_Italic.ttf */,
+				C5F302131D6285E200388B99 /* CaviarDreams.ttf */,
 				13B07FAE1A68108700A75B9A /* CornellPulse */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CornellPulseTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				C5F302331D628DB400388B99 /* HockeySDK.embeddedframework */,
 				70B31035783943D6B5199F44 /* Resources */,
+				9932A923526A8B8D3CB6AB26 /* Pods */,
+				AA8D5E50E8FCB23F99F7A869 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -389,6 +436,54 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9932A923526A8B8D3CB6AB26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D282D0CEA0D94ABBC415E3EF /* Pods-CornellPulse.debug.xcconfig */,
+				AE795DE84147621065B166BE /* Pods-CornellPulse.release.xcconfig */,
+				10BCFAE032B4A0E69338CD7A /* Pods-CornellPulseTests.debug.xcconfig */,
+				B56E9A3067A87F1CB5A190F2 /* Pods-CornellPulseTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA8D5E50E8FCB23F99F7A869 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6D97342F85FF954E30857AA /* libPods-CornellPulse.a */,
+				8BED5D7D2EE203B6D5161C0B /* libPods-CornellPulseTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5F302331D628DB400388B99 /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C5F302341D628DB400388B99 /* HockeySDK.framework */,
+				C5F302351D628DB400388B99 /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		C5F302351D628DB400388B99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5F302361D628DB400388B99 /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C5F302481D62B05500388B99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3024E1D62B05500388B99 /* HockeySDKResources.bundle */,
+				C5F302501D62B05500388B99 /* libPods-CornellPulse.a */,
+				C5F302521D62B05500388B99 /* libPods-CornellPulseTests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,9 +491,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CornellPulseTests" */;
 			buildPhases = (
+				E3F6D781398853723601B851 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				DF76D43F44A99E3AE39268A2 /* [CP] Embed Pods Frameworks */,
+				4D497C65BC22142F5A0C69DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -414,10 +512,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CornellPulse" */;
 			buildPhases = (
+				C0D6DFEAF025F54B9BDA8789 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				9A3EED3FF585E1390692B6D4 /* [CP] Embed Pods Frameworks */,
+				64A1C47F004F1CA4D62BCD2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -455,6 +556,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = C5F302481D62B05500388B99 /* Products */;
+					ProjectRef = C5F302471D62B05500388B99 /* Pods.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -597,6 +702,27 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		C5F3024E1D62B05500388B99 /* HockeySDKResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HockeySDKResources.bundle;
+			remoteRef = C5F3024D1D62B05500388B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5F302501D62B05500388B99 /* libPods-CornellPulse.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-CornellPulse.a";
+			remoteRef = C5F3024F1D62B05500388B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C5F302521D62B05500388B99 /* libPods-CornellPulseTests.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-CornellPulseTests.a";
+			remoteRef = C5F302511D62B05500388B99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -604,6 +730,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F302151D6285E200388B99 /* CaviarDreams_Bold.ttf in Resources */,
+				C5F302191D6285E200388B99 /* CaviarDreams_Italic.ttf in Resources */,
+				C5F3023A1D628DB400388B99 /* HockeySDKResources.bundle in Resources */,
+				C5F3021B1D6285E200388B99 /* CaviarDreams.ttf in Resources */,
+				C5F302171D6285E200388B99 /* CaviarDreams_BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,18 +744,19 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				2B149EE51CD55BE10009FCA1 /* CaviarDreams.ttf in Resources */,
+				C5F302391D628DB400388B99 /* HockeySDKResources.bundle in Resources */,
+				C5F3021A1D6285E200388B99 /* CaviarDreams.ttf in Resources */,
 				F777BC51C96242B3BE04E98E /* Entypo.ttf in Resources */,
 				725ACAF81A69447695F7D24E /* EvilIcons.ttf in Resources */,
 				916DF1C6C3B445E2941F306A /* FontAwesome.ttf in Resources */,
 				E0495619423146259D546EE0 /* Foundation.ttf in Resources */,
 				C7C4D0FAFEB3481BA675B770 /* Ionicons.ttf in Resources */,
-				2B149EE41CD55BE10009FCA1 /* CaviarDreams_Italic.ttf in Resources */,
 				6CF1C9EF27A044E8895732BC /* MaterialIcons.ttf in Resources */,
-				2B149EE21CD55BE10009FCA1 /* CaviarDreams_Bold.ttf in Resources */,
+				C5F302181D6285E200388B99 /* CaviarDreams_Italic.ttf in Resources */,
 				52727C4DA25E4783AB3BFB33 /* Octicons.ttf in Resources */,
+				C5F302141D6285E200388B99 /* CaviarDreams_Bold.ttf in Resources */,
 				FBA89DE83D434316BE3682E8 /* Zocial.ttf in Resources */,
-				2B149EE31CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf in Resources */,
+				C5F302161D6285E200388B99 /* CaviarDreams_BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +776,96 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		4D497C65BC22142F5A0C69DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CornellPulseTests/Pods-CornellPulseTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64A1C47F004F1CA4D62BCD2C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CornellPulse/Pods-CornellPulse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A3EED3FF585E1390692B6D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CornellPulse/Pods-CornellPulse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0D6DFEAF025F54B9BDA8789 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF76D43F44A99E3AE39268A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CornellPulseTests/Pods-CornellPulseTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3F6D781398853723601B851 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -690,11 +912,13 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10BCFAE032B4A0E69338CD7A /* Pods-CornellPulseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -715,12 +939,14 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56E9A3067A87F1CB5A190F2 /* Pods-CornellPulseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
 				INFOPLIST_FILE = CornellPulseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -737,9 +963,14 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D282D0CEA0D94ABBC415E3EF /* Pods-CornellPulse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -756,8 +987,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE795DE84147621065B166BE /* Pods-CornellPulse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
