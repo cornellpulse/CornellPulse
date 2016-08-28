@@ -83,7 +83,7 @@ var Dining = React.createClass({
         var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
         var ratio = (count/peak) > 1 ? 1 : (count/peak); 
         
-// UNOOOOOOO
+
         if (rowData.status === "Closed") {
             return (
                 <TouchableOpacity
@@ -99,7 +99,7 @@ var Dining = React.createClass({
                     </View>
                 </TouchableOpacity>);
         } else {
-            // DOOOOOOS
+            
             return (
                 <TouchableHighlight
                     underlayColor='#DDDDDD'
@@ -117,14 +117,17 @@ var Dining = React.createClass({
     },
 
     render() {
+        /* SUPER IMPORTANT: When ListView doesn't scroll all the way down to the last member of the list,
+                            adjust the height of the <Image> so that it can fit all the members of list. If list 
+                            grows in size dynamically, then you have to get creative to adjust the height. */
         return (
             <Image 
-                style={{width: null, height: 700, paddingTop: 30}} 
+                style={{width: null, height: 620, paddingTop: 30}} 
                 source={require('../assets/CornellBackground.png')}>
                 <PageHeaderText title="Dining" />
                 <Filter enabled={true} filterList={["North", "West", "Central"]} filterBy={this.state.filterBy} click={this.click} />
                 <ListView
-                    automaticallyAdjustContentInsets={false}
+                    automaticallyAdjustContentInsets={true}
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow} />
                 
