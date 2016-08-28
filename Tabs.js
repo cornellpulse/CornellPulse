@@ -20,24 +20,23 @@ var {
 
 var Tabs = React.createClass({
   getInitialState() {
-    return {selectedTab: 'Fitness'};
+    return {selectedTab: 'Dining'};
   },
 
   render() {
     return (
       <TabBarIOS>
-        <Icon.TabBarItemIOS
-          iconName="fitness-center"
-          selected={this.state.selectedTab == "Fitness"}
-          onPress={() => this.setState({selectedTab: "Fitness"})}
-          title="Fitness">
+         <Icon.TabBarItemIOS
+          iconName="restaurant"
+          selected={this.state.selectedTab == "Dining"}
+          onPress={() => this.setState({selectedTab: "Dining"})}>
 
           <Fetcher
-            display={"Fitness"}
-            {...this.props} // shorthand for sending all props down to Fitness
+            display={"Dining"}
+            {...this.props}
           />
 
-        </Icon.TabBarItemIOS>
+        </Icon.TabBarItemIOS>   
         {/*<Icon.TabBarItemIOS
           iconName="email"
           selected={this.state.selectedTab == "Feedback"}
@@ -47,18 +46,17 @@ var Tabs = React.createClass({
           <More />
 
         </Icon.TabBarItemIOS>*/}  
-        <Icon.TabBarItemIOS
-          iconName="restaurant"
-          selected={this.state.selectedTab == "Dining"}
-          onPress={() => this.setState({selectedTab: "Dining"})}
-          title="Dining">
+       <Icon.TabBarItemIOS
+          iconName="fitness-center"
+          selected={this.state.selectedTab == "Fitness"}
+          onPress={() => this.setState({selectedTab: "Fitness"})}>
 
           <Fetcher
-            display={"Dining"}
-            {...this.props}
+            display={"Fitness"}
+            {...this.props} // shorthand for sending all props down to Fitness
           />
 
-        </Icon.TabBarItemIOS>   
+        </Icon.TabBarItemIOS>
       </TabBarIOS>
     )
   }

@@ -20,11 +20,11 @@ var UsageBar = React.createClass({
     }
 
     if(this.props.percentage >= 70) {
-      barStyle['backgroundColor'] = '#CA6F7D';
+      barStyle['backgroundColor'] = '#b31b1b';
     } else if(this.props.percentage >= 40) {
-      barStyle['backgroundColor'] = '#D9BC85';
+      barStyle['backgroundColor'] = '#FFF04A';
     } else {
-      barStyle['backgroundColor'] = '#A9D78B';
+      barStyle['backgroundColor'] = '#7EFF72';
     }
     barStyle['width'] = (100 * this.props.percentage) / 100; //  Formula for sizing color bar: <width of UBar> * <percenatage> / 100
     return barStyle;
@@ -33,7 +33,7 @@ var UsageBar = React.createClass({
   render() {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
-        <View style={{width:100, height: 20, backgroundColor: '#15337E'}}>
+        <View style={{width:100, height: 20, backgroundColor: '#2d2d2d'}}>
           <View style={this.getBarStyle()}>
           </View>
         </View>

@@ -14,14 +14,20 @@ var {
 var Home = React.createClass({
     render() {
         return (
-            <View style={{flex: 1, paddingTop: 30}}>
-                <Text style={{paddingBottom: 10, alignSelf: 'center', fontFamily: 'Caviar Dreams', fontSize: 30, fontWeight: 'bold', color: 'white'}}>Cornell Pulse</Text>
+            <View style={{flex: 1, paddingTop: 30, margin: 30}}>
+                <Text style={{ paddingBottom: 10, alignSelf: 'center', fontFamily: 'Palatino', fontSize: 30, fontWeight: 'bold', color: 'white'}}>Cornell Pulse</Text>
 
-                <Text style={{color: 'white', fontFamily: 'Caviar Dreams', fontSize: 20}}>
-                    Welcome to Cornell Pulse, your personal day planner! 
+                <Text style={{textAlign: 'center', color: 'white', fontFamily: 'KohinoorBangla-Semibold', fontSize: 20}}>
+                    WELCOME!
+                    {"\n"}
+                    {"\n"}
                     Our simple UI takes the guesswork out of planning a 
-                    trip to your favorite dining hall, cafe, or 
-                    fitness center by letting you know how busy each facility is.
+                    trip to your favorite 
+                    {"\n"}{"\n"}
+                    - dining hall {"\n"}{"\n"}
+                    - cafe {"\n"}{"\n"}
+                    - fitness center {"\n"}{"\n"}
+                    by letting you know how busy each facility is.
                 </Text>
 
                 <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
@@ -29,7 +35,7 @@ var Home = React.createClass({
                     underlayColor="#DDDDDD"
                     onPress={() => this.props.onForward(Tabs, 'Tabs')}
                     style={{height:60, marginTop: 50, width: 200, justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: 'white', borderRadius: 10}}>
-                    <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: '#323232'}}>Go!</Text>
+                    <Text style={{fontSize: 20, fontFamily: 'Palatino', color: '#323232'}}>Go!</Text>
                   </TouchableHighlight>
                 </View>
             </View>

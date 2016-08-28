@@ -19,11 +19,11 @@ var Location = React.createClass({
     return (
       <Image 
         style={{flex: 1, width: null, height: null, paddingTop: 30}}
-        source={require('../assets/background1.jpg')}>
+        source={require('../assets/CornellBackground.png')}>
 
         <PageHeaderText title={this.props.route.name} color='black'></PageHeaderText>
         
-        <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: '#323232', paddingTop: 20}}>
+        <Text style={{margin: 50, fontSize: 20, fontFamily: 'Palatino', color: '#323232', paddingTop: 20}}>
           Welcome to the {this.props.route.name} page. We are actively developing this page, so right now
           there is nothing on it. Please come back here another time.
         </Text>
@@ -32,7 +32,7 @@ var Location = React.createClass({
             underlayColor="#DDDDDD"
             onPress={() => this.props.onBack()}
             style={{height:60, marginTop: 50, width: 200, justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: 'black', borderRadius: 10}}>
-            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: '#323232'}}>Back</Text>
+            <Text style={{fontSize: 20, fontFamily: 'Palatino', color: '#323232'}}>Back</Text>
           </TouchableHighlight>
         </View>
         

@@ -19,9 +19,9 @@ var PageHeaderText = React.createClass({
 
 	
 	render() {
-		var color = this.props.color ? this.props.color : 'white';
+		var color = this.props.color ? this.props.color : '#b31b1b';
 		return (
-			<Text style={{paddingBottom: 10, alignSelf: 'center', fontFamily: 'Caviar Dreams', fontSize: 20, fontWeight: 'bold', color: color}}>
+			<Text style={{paddingBottom: 10, alignSelf: 'center', fontFamily: 'Palatino', fontSize: 30, fontWeight: 'bold', color: color}}>
 				{this.props.title}
 			</Text>
 		);
