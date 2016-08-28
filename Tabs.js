@@ -7,7 +7,7 @@ var Fitness = require('./pages/Fitness');
 var More = require('./pages/More');
 var Fetcher = require('./Fetcher.js');
 
-var Icon = require('react-native-vector-icons/MaterialIcons');
+var Icon = require('react-native-vector-icons/Ionicons');
 
 var {
   StyleSheet,
@@ -27,7 +27,7 @@ var Tabs = React.createClass({
     return (
       <TabBarIOS>
          <Icon.TabBarItemIOS
-          iconName="restaurant"
+          iconName="pizza"
           selected={this.state.selectedTab == "Dining"}
           onPress={() => this.setState({selectedTab: "Dining"})}>
 
@@ -47,7 +47,7 @@ var Tabs = React.createClass({
 
         </Icon.TabBarItemIOS>*/}  
        <Icon.TabBarItemIOS
-          iconName="fitness-center"
+          iconName="ios-pulse"
           selected={this.state.selectedTab == "Fitness"}
           onPress={() => this.setState({selectedTab: "Fitness"})}>
 

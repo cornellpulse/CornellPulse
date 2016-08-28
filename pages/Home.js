@@ -14,8 +14,8 @@ var {
 var Home = React.createClass({
     render() {
         return (
-            <View style={{flex: 1, paddingTop: 30, margin: 30}}>
-                <Text style={{ paddingBottom: 10, alignSelf: 'center', fontFamily: 'Palatino', fontSize: 30, fontWeight: 'bold', color: 'white'}}>Cornell Pulse</Text>
+            <View style={{flex: 1, backgroundColor: '#b31b1b'}}>
+                <Text style={{ padding: 50, alignSelf: 'center', fontFamily: 'Palatino', fontSize: 30, fontWeight: 'bold', color: 'white'}}>Cornell Pulse</Text>
 
                 <Text style={{textAlign: 'center', color: 'white', fontFamily: 'KohinoorBangla-Semibold', fontSize: 20}}>
                     WELCOME!
