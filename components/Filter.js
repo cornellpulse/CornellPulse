@@ -22,7 +22,7 @@ var Filter = React.createClass({
 
   render() {
     return (
-      <View style={{flexDirection: 'row', borderColor: '#5C6890', borderTopWidth: 2, borderBottomWidth: 2, height: 40, marginTop: 10}}>
+      <View style={{flexDirection: 'row', borderColor: '#b31b1b', borderTopWidth: 2, borderBottomWidth: 2, height: 40, marginTop: 10}}>
         {this.props.filterList.map((el, inx) => {
           if (el === "All") {
             return (<FilterBox

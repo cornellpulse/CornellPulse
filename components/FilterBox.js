@@ -20,9 +20,9 @@ var FilterBox = React.createClass({
     placeHighlight() {
         /*Puts a higlight on the currently selected FilterBox*/
         if (this.props.isHighlighted) {
-            return {touchableHighlight: {backgroundColor : "#1E2F64"}, text: {color: '#6ED5E5'}};
+            return {touchableHighlight: {backgroundColor : "#b31b1b"}, text: {color: 'black'}};
         } else {
-            return {touchableHighlight: {}, text: {color: 'white'}};
+            return {touchableHighlight: {}, text: {color: '#c0c0c0'}};
         }
     },
     
@@ -32,7 +32,7 @@ var FilterBox = React.createClass({
                 style={[{flex:1}, this.placeHighlight().touchableHighlight]}
                 onPress={this.props.onClick}>
                 <View>
-                    <Text style={[{fontSize: 15, fontWeight: 'bold', fontFamily: "Caviar Dreams", textAlign: 'center', marginTop: 9}, this.placeHighlight().text]}>{this.props.name}</Text>
+                    <Text style={[{fontSize: 15, fontWeight: 'bold', fontFamily: "Palatino", textAlign: 'center', marginTop: 9}, this.placeHighlight().text]}>{this.props.name}</Text>
                 </View>
             </TouchableHighlight>
         );

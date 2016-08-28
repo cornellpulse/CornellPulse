@@ -83,28 +83,30 @@ var Dining = React.createClass({
         var peak = rowData.peak == 0 ? 1 : rowData.peak; // so we don't divide by 0 later on in UsageBar
         var ratio = (count/peak) > 1 ? 1 : (count/peak); 
         
+// UNOOOOOOO
         if (rowData.status === "Closed") {
             return (
                 <TouchableOpacity
                     underlayColor='#DDDDDD'
                     onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#545454', opacity: .4}}>         
+                    <View style={{marginTop: 1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#d4d4d4', opacity: .8}}>         
                         <View style={{marginLeft : 20, marginTop: 25}}>
-                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
+                            <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'white'}}>{shortenName(rowData.location)}</Text>
                         </View>
                         <View style={{marginRight : 30, marginTop: 25}}>
-                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>Closed</Text>
+                            <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'white'}}>Closed</Text>
                         </View>
                     </View>
                 </TouchableOpacity>);
         } else {
+            // DOOOOOOS
             return (
                 <TouchableHighlight
                     underlayColor='#DDDDDD'
                     onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80}}>         
+                    <View style={{marginTop: 1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#9b9b9b', opacity: 1}}>         
                         <View style={{marginLeft : 20, marginTop: 25}}>
-                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{shortenName(rowData.location)}</Text>
+                            <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'black'}}>{shortenName(rowData.location)}</Text>
                         </View>
                         <View style={{marginRight : 20}}>
                             <UsageBar percentage={ratio * 100}/>
@@ -118,7 +120,7 @@ var Dining = React.createClass({
         return (
             <Image 
                 style={{width: null, height: 700, paddingTop: 30}} 
-                source={require('../assets/background.jpg')}>
+                source={require('../assets/CornellBackground.png')}>
                 <PageHeaderText title="Dining" />
                 <Filter enabled={true} filterList={["North", "West", "Central"]} filterBy={this.state.filterBy} click={this.click} />
                 <ListView

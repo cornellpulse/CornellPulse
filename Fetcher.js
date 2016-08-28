@@ -37,7 +37,7 @@ var Fetcher = React.createClass({
 		if (Object.keys(this.state.allData).length === 0) {
 			return(
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                    <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white', paddingBottom: 15}}>Loading...</Text>
+                    <Text style={{fontSize: 20, fontFamily: 'Palatino', color: 'white', paddingBottom: 15}}>Loading...</Text>
                     <ActivityIndicatorIOS animating={true} size='large'/>
                 </View>
 

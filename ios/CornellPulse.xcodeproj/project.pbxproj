@@ -22,10 +22,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		25835D3C385543C9B7B19E06 /* libRNChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B022497065745DCB7AA2CC0 /* libRNChart.a */; };
-		2B149EE21CD55BE10009FCA1 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EDE1CD55BE10009FCA1 /* CaviarDreams_Bold.ttf */; settings = {ASSET_TAGS = (); }; };
-		2B149EE31CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EDF1CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
-		2B149EE41CD55BE10009FCA1 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EE01CD55BE10009FCA1 /* CaviarDreams_Italic.ttf */; settings = {ASSET_TAGS = (); }; };
-		2B149EE51CD55BE10009FCA1 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B149EE11CD55BE10009FCA1 /* CaviarDreams.ttf */; settings = {ASSET_TAGS = (); }; };
 		52727C4DA25E4783AB3BFB33 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5644225EF3784AC49C014880 /* Octicons.ttf */; };
 		6CF1C9EF27A044E8895732BC /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EF745F66FC74BDD8678AB33 /* MaterialIcons.ttf */; };
 		725ACAF81A69447695F7D24E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD90A5FB369483CB6AA0FD6 /* EvilIcons.ttf */; };
@@ -154,10 +150,6 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CornellPulse/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1C3BF2CAE3D64995A2229A43 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
-		2B149EDE1CD55BE10009FCA1 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Bold.ttf; path = ../../Downloads/CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
-		2B149EDF1CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_BoldItalic.ttf; path = ../../Downloads/CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
-		2B149EE01CD55BE10009FCA1 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Italic.ttf; path = ../../Downloads/CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
-		2B149EE11CD55BE10009FCA1 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams.ttf; path = ../../Downloads/CaviarDreams.ttf; sourceTree = "<group>"; };
 		5644225EF3784AC49C014880 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		60994D451CE24DA8B47D078D /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		69CB9235A5D749C2AE96F59B /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
@@ -366,10 +358,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				2B149EDE1CD55BE10009FCA1 /* CaviarDreams_Bold.ttf */,
-				2B149EDF1CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf */,
-				2B149EE01CD55BE10009FCA1 /* CaviarDreams_Italic.ttf */,
-				2B149EE11CD55BE10009FCA1 /* CaviarDreams.ttf */,
 				13B07FAE1A68108700A75B9A /* CornellPulse */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CornellPulseTests */,
@@ -616,18 +604,14 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				2B149EE51CD55BE10009FCA1 /* CaviarDreams.ttf in Resources */,
 				F777BC51C96242B3BE04E98E /* Entypo.ttf in Resources */,
 				725ACAF81A69447695F7D24E /* EvilIcons.ttf in Resources */,
 				916DF1C6C3B445E2941F306A /* FontAwesome.ttf in Resources */,
 				E0495619423146259D546EE0 /* Foundation.ttf in Resources */,
 				C7C4D0FAFEB3481BA675B770 /* Ionicons.ttf in Resources */,
-				2B149EE41CD55BE10009FCA1 /* CaviarDreams_Italic.ttf in Resources */,
 				6CF1C9EF27A044E8895732BC /* MaterialIcons.ttf in Resources */,
-				2B149EE21CD55BE10009FCA1 /* CaviarDreams_Bold.ttf in Resources */,
 				52727C4DA25E4783AB3BFB33 /* Octicons.ttf in Resources */,
 				FBA89DE83D434316BE3682E8 /* Zocial.ttf in Resources */,
-				2B149EE31CD55BE10009FCA1 /* CaviarDreams_BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

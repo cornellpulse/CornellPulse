@@ -74,12 +74,12 @@ var Fitness = React.createClass({
                 <TouchableOpacity
                     underlayColor='#DDDDDD'
                     onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#545454', opacity: .4}}>         
+                    <View style={{marginTop: 1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#d4d4d4', opacity: .8}}>         
                         <View style={{marginLeft : 20, marginTop: 25}}>
-                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{rowData.location}</Text>
+                            <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'white'}}>{rowData.location}</Text>
                         </View>
                         <View style={{marginRight : 30, marginTop: 25}}>
-                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>Closed</Text>
+                            <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'white'}}>Closed</Text>
                             {/*<UsageBar percentage={ratio * 100}/>*/}
                         </View>
                     </View>
@@ -89,9 +89,9 @@ var Fitness = React.createClass({
                 <TouchableHighlight
                     underlayColor='#DDDDDD'
                     onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{justifyContent : 'space-between', flexDirection : 'row', height: 80}}>         
+                    <View style={{marginTop: 1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#9b9b9b', opacity: 1}}>         
                         <View style={{marginLeft : 20, marginTop: 25}}>
-                            <Text style={{fontSize: 20, fontFamily: 'Caviar Dreams', color: 'white'}}>{rowData.location}</Text>
+                            <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'black'}}>{rowData.location}</Text>
                         </View>
                         <View style={{marginRight : 20}}>
                             <UsageBar percentage={ratio * 100}/>
@@ -105,7 +105,7 @@ var Fitness = React.createClass({
         return (
                 <Image 
                     style={{flex: 1, width: null, height: null, paddingTop: 30}}
-                    source={require('../assets/background.jpg')}>
+                    source={require('../assets/CornellBackground.png')}>
                     <PageHeaderText title="Fitness"/>
                     <Filter enabled={false} filterList={["All"]} filterBy={this.state.filterBy} click={this.click} />
                     <ListView
