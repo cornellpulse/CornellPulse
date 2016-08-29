@@ -74,7 +74,7 @@ var Fitness = React.createClass({
                 <TouchableOpacity
                     underlayColor='#DDDDDD'
                     onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{marginTop: 1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#d4d4d4', opacity: .8}}>         
+                    <View style={{marginTop: 1.1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#d4d4d4', opacity: .8}}>         
                         <View style={{marginLeft : 20, marginTop: 25}}>
                             <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'white'}}>{rowData.location}</Text>
                         </View>
@@ -89,7 +89,7 @@ var Fitness = React.createClass({
                 <TouchableHighlight
                     underlayColor='#DDDDDD'
                     onPress={() => this.props.onForward(Location, rowData.location)}>
-                    <View style={{marginTop: 1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#9b9b9b', opacity: 1}}>         
+                    <View style={{marginTop: 1.1, justifyContent : 'space-between', flexDirection : 'row', height: 80, backgroundColor: '#9b9b9b', opacity: 1}}>         
                         <View style={{marginLeft : 20, marginTop: 25}}>
                             <Text style={{fontSize: 17, fontFamily: 'KohinoorBangla-Semibold', color: 'black'}}>{rowData.location}</Text>
                         </View>
