@@ -6,6 +6,7 @@ var {
     View,
     ActivityIndicatorIOS,
     Text,
+    AppStateIOS
    } = React;
 
 var Fitness = require('./pages/Fitness.js');
@@ -18,7 +19,7 @@ var Fetcher = React.createClass({
 
 	_fetchAllData() {
         /* Fetches the data object from the REST Endpoint and sets it to this.state.dataSource */
-        var endpoint = 'http://cornellpulse.com:3000/api';
+        var endpoint = 'http://cornellpulse.com:3000/test';
 
         fetch(endpoint)
             .then((response) => response.json())
@@ -33,12 +34,22 @@ var Fetcher = React.createClass({
     	this._fetchAllData();
     },
 
+    componentDidMount() {
+        AppStateIOS.addEventListener('change', (state) => {
+            if (state === 'active') {
+
+                this.setState({allData: {}}); // Reset the data
+                this._fetchAllData();
+            }
+        });
+    },
+
 	render() {
 		if (Object.keys(this.state.allData).length === 0) {
 			return(
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                    <Text style={{fontSize: 20, fontFamily: 'Palatino', color: 'white', paddingBottom: 15}}>Loading...</Text>
-                    <ActivityIndicatorIOS animating={true} size='large'/>
+                    <Text style={{fontSize: 20, fontFamily: 'Palatino', color: 'black', paddingBottom: 15}}>Loading...</Text>
+                    <ActivityIndicatorIOS animating={true} size='large' color="blue"/>
                 </View>
 
                 );

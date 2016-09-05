@@ -119,7 +119,7 @@ var Dining = React.createClass({
     render() {
         /* SUPER IMPORTANT: When ListView doesn't scroll all the way down to the last member of the list,
                             adjust the height of the <Image> so that it can fit all the members of list. If list 
-                            grows in size dynamically, then you have to get creative to adjust the height. */
+                            grows in size dynamically, then you have to get creative with height adjustment. */
         return (
             <Image 
                 style={{width: null, height: 620, paddingTop: 30}} 

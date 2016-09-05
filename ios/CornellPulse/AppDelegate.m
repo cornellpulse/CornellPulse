@@ -56,10 +56,10 @@
                                                    launchOptions:launchOptions];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
+  UIViewController *rootViewController = [UIViewController new]; // contains the root view of the applcation
+  rootViewController.view = rootView; 
   self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
+  [self.window makeKeyAndVisible]; // sets window to be a 'key' window (or main window) and makes it visible
   return YES;
 }
 

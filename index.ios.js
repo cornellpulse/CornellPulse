@@ -44,7 +44,7 @@ class CornellPulse extends React.Component {
     return (
       <Navigator
         style={{backgroundColor: 'white'}}
-        initialRoute={{name: 'Home', index: 0, component: Home}}
+        initialRoute={{name: 'Home', index: 0, component: Tabs}}
         renderScene={this._renderScene}
         configureScene={(route, routeStack) => Navigator.SceneConfigs.HorizontalSwipeJump}
       />
