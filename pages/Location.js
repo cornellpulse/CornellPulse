@@ -1,67 +1,170 @@
-'use strict'
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
 
-var React = require('react-native');
+import React, { Component } from 'react';
+import Chart from 'react-native-chart';
 
-var {
+import {
+  AppRegistry,
   StyleSheet,
   Text,
-  TouchableHighlight, 
-  TabBarIOS,
-  Image,
   View,
-} = React;
+  ScrollView,
+  TouchableHighlight,
+  UsageBar,
+  Dimensions
+} from 'react-native';
 
-var PageHeaderText = require('../components/PageHeaderText.js');
+var days = {"Today": {
+    "8": 12,
+    "9": 70,
+    "10": 33,
+    "11": 50,
+    "12": 80,
+    "13": 100,
+    "14": 70,
+    "15": 33,
+    "16": 33
+  }}
 
+const data = [
+    [0, 1],
+    [1, 3],
+    [3, 7],
+    [4, 9],
+];
 
-var Location = React.createClass({
+var ProjectCharts = React.createClass({
+  getInitialState() {
+    return {
+      'Days': days
+    }
+  },
+
   render() {
-    /*** Old View 
-      <Image 
-        style={{flex: 1, width: null, height: null, paddingTop: 30}}
-        source={require('../assets/CornellBackground.png')}>
-
-        <PageHeaderText title={this.props.route.name} color='black'></PageHeaderText>
-        
-        <Text style={{margin: 50, fontSize: 20, fontFamily: 'Palatino', color: '#323232', paddingTop: 20}}>
-          Welcome to the {this.props.route.name} page. We are actively developing this page, so right now
-          there is nothing on it. Please come back here another time.
-        </Text>
-        <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-          <TouchableHighlight
-            underlayColor="#DDDDDD"
-            onPress={() => this.props.onBack()}
-            style={{height:60, marginTop: 50, width: 200, justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: 'black', borderRadius: 10}}>
-            <Text style={{fontSize: 20, fontFamily: 'Palatino', color: '#323232'}}>Back</Text>
-          </TouchableHighlight>
-        </View>
-        
-
-      </Image>
-    ***/
     return (
-      <View style={{flex:1}}>
-        {/*height: 200, width: 379 */}
-        <View style={{flex: .5, paddingTop: 30, borderColor: 'black', borderWidth: 2}}>
-          <Text>Eye Catching Graphic                         "History" Button</Text>
-          
+      <View style = {styles.main}>
+        <View style = {styles.header}>
+        <Text style= {{fontSize:30, justifyContent: 'center'}}> Today's avgerage Bustle</Text>
         </View>
-        <View style={{flexDirection: 'row', flex: .25, borderColor: 'purple', borderWidth: 2}}>
-          <View style={{borderColor: 'red', borderWidth: 2, flex: 1}}>
-            <Text>-Name of Location</Text>
-            <Text>-Open/Closed + Open Times for Today</Text>
+
+        <ScrollView horizontal contentContainerStyle={styles.contentContainer}>
+        <View style = {styles.barChart}>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['8'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['8'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>8 - 9</Text>
+            </View>
           </View>
-          <View style={{borderColor: 'green', borderWidth: 2, flex: 1}}>
-            <Text>-Usage Bar for this Location</Text>
-            <Text>-Succint Explanation of what Usage Bar is conveying (empty, busy, packed)</Text>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['9'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['9'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>9 - 10</Text>
+            </View>
+          </View>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['10'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['10'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>10 - 11</Text>
+            </View>
+          </View>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['11'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['11'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>11 - 12</Text>
+            </View>
+          </View>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['12'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['12'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>12 - 13</Text>
+            </View>
+          </View>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['13'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['13'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>14 - 15</Text>
+            </View>
+          </View>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['14'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['14'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text} >16 - 17</Text>
+            </View>
+          </View>
+           <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['15'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['15'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>18 - 19</Text>
+            </View>
+          </View>
+          <View style = {styles.barItem}>
+            <View style = {{height: (100-days['Today']['16'])*1.5, backgroundColor: '#f6f6f6'}}>
+            </View>
+            <View style = {{height: (days['Today']['16'])*1.5, backgroundColor: 'skyblue'}}>
+              <Text style={styles.text}>20 - 21</Text>
+            </View>
           </View>
         </View>
-        <View style={{borderColor: 'pink', borderWidth: 2, flex: 1}}>
-          <Text>Menu (Something else for Fitness)</Text>
-        </View>
+      </ScrollView>
+
+      <View style={styles.menu} >
+        <Text style={{textAlign:'center'}} > Here goes the menu desciption </Text>
       </View>
-      );
-  }
+
+      </View>
+  )}
 })
 
-module.exports = Location;
+const styles = StyleSheet.create({
+  main:{
+    // borderWidth:4,
+    flex: 1
+  },
+  header: {
+    marginTop: 50,
+    flex: 0.2,
+    // borderWidth:4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // fontFamily: 'AmericanTypewriter-Bold',
+  },
+  contentContainer: {
+    // borderWidth:8,
+    // showsHorizontalScrollIndicator: true,
+    flex: 0.1,
+    justifyContent:'center',
+  },
+  barChart:{
+    margin:10,
+
+    flexDirection: 'row',
+    // borderWidth:4,
+    justifyContent: 'space-between',
+  },
+  barItem:{
+    width: 40,
+  },
+  menu: {
+    flex:1.5,
+  },
+  text: {
+    fontSize: 10,
+    textAlign: 'center',
+    color: 'white',
+      }
+});
+
+AppRegistry.registerComponent('ProjectCharts', () => ProjectCharts);
+
