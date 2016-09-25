@@ -52,7 +52,6 @@ var ProjectCharts = React.createClass({
         </View>
 
         <ScrollView horizontal contentContainerStyle={styles.contentContainer}>
-        <View style = {styles.barChart}>
           <View style = {styles.barItem}>
             <View style = {{height: (100-days['Today']['8'])*1.5, backgroundColor: '#f6f6f6'}}>
             </View>
@@ -116,7 +115,6 @@ var ProjectCharts = React.createClass({
               <Text style={styles.text}>20 - 21</Text>
             </View>
           </View>
-        </View>
       </ScrollView>
 
       <View style={styles.menu} >
@@ -141,20 +139,21 @@ const styles = StyleSheet.create({
     // fontFamily: 'AmericanTypewriter-Bold',
   },
   contentContainer: {
+    justifyContent: 'space-between',
     // borderWidth:8,
     // showsHorizontalScrollIndicator: true,
     flex: 0.1,
-    justifyContent:'center',
+    // justifyContent:'center',
   },
   barChart:{
-    margin:10,
+    // margin:10,
 
     flexDirection: 'row',
     // borderWidth:4,
-    justifyContent: 'space-between',
   },
   barItem:{
     width: 40,
+    // borderWidth:4,
   },
   menu: {
     flex:1.5,
