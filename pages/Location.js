@@ -5,165 +5,107 @@
  */
 
 import React, { Component } from 'react';
-import Chart from 'react-native-chart';
-
+import HourItems from './src/hour-items';
+import MenuItem from './src/menu-items';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   ScrollView,
-  TouchableHighlight,
-  UsageBar,
-  Dimensions
 } from 'react-native';
 
-var days = {"Today": {
-    "8": 12,
-    "9": 70,
-    "10": 33,
-    "11": 50,
-    "12": 80,
-    "13": 100,
-    "14": 70,
-    "15": 33,
-    "16": 33
-  }}
+var HOURS = [12, 70, 33, 50, 80, 100, 70, 40, 30, 60, 80, 90, 10, 13, 15]
 
-const data = [
-    [0, 1],
-    [1, 3],
-    [3, 7],
-    [4, 9],
-];
+var MENU = { "Soup Station": ['Beef Red Chili'],
+  "Salad Bar Station": ['Healthy Style Salad Bar'],
+  "Hot Traditional Station  ": ['Fresh Cut Fries ', 
+  'Buffalo Wings','Calico Beans','Fresh Beef Burger'],
+  "Soup Station2": ['Beef Red Chili'],
+  "Salad Bar St22ation": ['Healssthy Style Salad Bar'],
+  "Hot Traditionalss Station  ": ['Fresssh Cut Fries ', 
+  'Buffalo Wssings','Calssico Beans','Fresh Bssseef Burger'],
+  "Soup BLA Station": ['Beef RBLAed Chili'],
+  "Salad BLABar Station": ['HealtBLAhy Style Salad Bar'],
+  "Hot TraditionaBLAl Station  ": ['FreshBLA Cut Fries ', 
+  'Buffalo WiBLAngs','CalBLAico Beans','Fresh BeeBLAf Burger'],
+  "Hot Trassditionalss Station  ": ['Fresssh Cut Fries ', 
+  'Buffaloss Wssings','Calssico Beans','Fresh Bssseef Burger'],
+  "Soup BLssA Station": ['Beef RBLssAed Chili'],
+  "Salad BLssABar Station": ['HealtBssLAhy Style Salad Bar'],
+  "Hot TradssitionaBLAl Station  ": ['FreshBLA Cut Fries ', 
+  'Buffalo WiBLAssngs','CalBLAico Beans','Fresh BeeBLAssf Burger'],}
 
-var ProjectCharts = React.createClass({
-  getInitialState() {
-    return {
-      'Days': days
+class Location extends Component {
+    _return_by_hour() {
+      var data = this.props.HOURS;
+      return HOURS.map(function(hour, el){
+        return(
+         <HourItems  key={el} hour={hour} />
+        );
+      });
     }
-  },
+
+  _return_by_menu() {
+    var menu = this.props.Menu;
+    return Object.keys(MENU).map(function(title, el) {
+      return (
+        <MenuItem title={title} menu={MENU[title]} key={el}/>
+        )
+    })
+  }
 
   render() {
     return (
-      <View style = {styles.main}>
-        <View style = {styles.header}>
-        <Text style= {{fontSize:30, justifyContent: 'center'}}> Today's avgerage Bustle</Text>
-        </View>
+    
 
+      <View style={styles.main}>
+        <Text style={styles.text}> Bears Den </Text>
+
+      <ScrollView contentContainerStyle={styles.contentContainerMain}>
+        <Text style={styles.title}> Average Buzz today (per hour)</Text>
         <ScrollView horizontal contentContainerStyle={styles.contentContainer}>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['8'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['8'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>8 - 9</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['9'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['9'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>9 - 10</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['10'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['10'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>10 - 11</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['11'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['11'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>11 - 12</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['12'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['12'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>12 - 13</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['13'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['13'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>14 - 15</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['14'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['14'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text} >16 - 17</Text>
-            </View>
-          </View>
-           <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['15'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['15'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>18 - 19</Text>
-            </View>
-          </View>
-          <View style = {styles.barItem}>
-            <View style = {{height: (100-days['Today']['16'])*1.5, backgroundColor: '#f6f6f6'}}>
-            </View>
-            <View style = {{height: (days['Today']['16'])*1.5, backgroundColor: 'skyblue'}}>
-              <Text style={styles.text}>20 - 21</Text>
-            </View>
-          </View>
+        {this._return_by_hour()}
+        </ScrollView>
+
+        <View style={styles.menuBox}>
+          {this._return_by_menu()}
+        </View>
       </ScrollView>
 
-      <View style={styles.menu} >
-        <Text style={{textAlign:'center'}} > Here goes the menu desciption </Text>
       </View>
+    
+    );
+  }
+}
 
-      </View>
-  )}
-})
-
-const styles = StyleSheet.create({
-  main:{
-    // borderWidth:4,
-    flex: 1
+const styles = StyleSheet.create({ 
+  contentContainerMain: {
   },
-  header: {
-    marginTop: 50,
-    flex: 0.2,
-    // borderWidth:4,
+  main: {
     justifyContent: 'center',
-    alignItems: 'center',
-    // fontFamily: 'AmericanTypewriter-Bold',
-  },
-  contentContainer: {
-    justifyContent: 'space-between',
-    // borderWidth:8,
-    // showsHorizontalScrollIndicator: true,
-    flex: 0.1,
-    // justifyContent:'center',
-  },
-  barChart:{
-    // margin:10,
-
-    flexDirection: 'row',
-    // borderWidth:4,
-  },
-  barItem:{
-    width: 40,
-    // borderWidth:4,
-  },
-  menu: {
-    flex:1.5,
+    marginTop: 40,
   },
   text: {
-    fontSize: 10,
     textAlign: 'center',
-    color: 'white',
-      }
+    fontSize: 30,
+  },
+  title: {
+    marginTop: 40,
+    marginBottom: 5,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  menuBox: {
+    margin: 20,
+  },
+  contentContainer: {
+    flexDirection: 'row',
+    height: 100,
+    justifyContent: 'center',
+    
+  }
 });
 
-AppRegistry.registerComponent('ProjectCharts', () => ProjectCharts);
 
+AppRegistry.registerComponent('Location', () => Location);
